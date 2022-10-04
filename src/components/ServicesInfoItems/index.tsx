@@ -1,8 +1,19 @@
-import { ServiceInfoItem, ServicesInfoItemsContainer } from './styles'
+import {
+  ServiceInfoItem,
+  ServicesInfoItemsContainer,
+  ServicesSquareImageContainer,
+} from './styles'
+
+import solutions_square from 'assets/solutions_square.svg'
+import Image from 'next/future/image'
 
 export function ServicesInfoItems() {
   return (
     <ServicesInfoItemsContainer>
+      <ServicesSquareImageContainer>
+        <Image src={solutions_square} alt="Losango azul escuro." />
+      </ServicesSquareImageContainer>
+
       <ServiceInfoItem>
         <h1>Design</h1>
         <p>O design está em tudo que a nossa volta.</p>

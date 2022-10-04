@@ -4,6 +4,7 @@ export const ServicesInfoItemsContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: start;
+  /* position: relative; */
 
   gap: 2rem;
 
@@ -39,4 +40,12 @@ export const ServiceInfoItem = styled.div`
       border-bottom: 1px solid ${({ theme }) => theme.colors['gray-600']};
     }
   }
+`
+
+export const ServicesSquareImageContainer = styled.div`
+  position: absolute;
+  top: 48rem;
+  left: 0;
+  z-index: -1;
+  opacity: 0.3;
 `

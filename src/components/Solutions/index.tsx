@@ -13,10 +13,11 @@ export function Solutions() {
         <h1>Soluções criativas e estratégicas para escalar seu negócio! </h1>
 
         <p>
-          A UPDUO foi fundada com intuído de ajudar na comunicação visual e
-          digital. Aliando Design e Marketing nos projetos, com o foco na
-          experiência agradável e persuasiva dos clientes finais, a fim de gerar
-          mais vendas e propagar a imagem positiva das empresas no digital.
+          A UPDUO foi fundada com intuito de aprimorar a comunicação visual e
+          digital do seu negócio. Aliando Design e Marketing nos projetos, com o
+          foco na experiência agradável e persuasiva dos clientes finais, a fim
+          de gerar mais vendas e propagar a imagem positiva das empresas no
+          digital.
         </p>
 
         <ContactButton text="Saiba mais" />

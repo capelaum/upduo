@@ -1,5 +1,6 @@
 import { Header } from 'components/Header'
 import { Hero } from 'components/Hero'
+import { Services } from 'components/Services'
 import { ServicesInfoItems } from 'components/ServicesInfoItems'
 import { Solutions } from 'components/Solutions'
 import type { NextPage } from 'next'
@@ -12,12 +13,14 @@ const Home: NextPage = () => {
       <Head>
         <title>UpDuo Comunicação</title>
       </Head>
+
       <Header />
 
       <HomeContainer>
         <Hero />
         <ServicesInfoItems />
         <Solutions />
+        <Services />
       </HomeContainer>
     </>
   )
