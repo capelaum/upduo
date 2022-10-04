@@ -23,7 +23,6 @@ export const HeroSquareImageContainer = styled.div`
   right: 0;
   z-index: -1;
   opacity: 0.3;
-  /* width: 50%; */
 `
 
 export const HeroCallToAction = styled.div`
@@ -42,27 +41,6 @@ export const HeroCallToAction = styled.div`
   p {
     font-size: 1.5rem;
     margin-bottom: 1.75rem;
-  }
-
-  button {
-    padding: 1rem 2rem;
-    border-radius: 8px;
-
-    background-color: ${({ theme }) => theme.colors.secondary};
-    color: ${({ theme }) => theme.colors.white};
-
-    font-size: 1.25rem;
-    text-transform: uppercase;
-
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.greenLight};
-    }
   }
 
   @media (max-width: 768px) {

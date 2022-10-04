@@ -1,5 +1,4 @@
 import Image from 'next/future/image'
-import { MdSend } from 'react-icons/md'
 import {
   HeroCallToAction,
   HeroContainer,
@@ -9,6 +8,7 @@ import {
 
 import hero from 'assets/hero.svg'
 import hero_square from 'assets/hero_square.svg'
+import { ContactButton } from 'components/ContactButton'
 
 export function Hero() {
   return (
@@ -22,10 +22,7 @@ export function Hero() {
 
         <p>Design e Estratégias de marketing para escalar seu negócio!</p>
 
-        <button>
-          Fale comigo!
-          <MdSend size={24} />
-        </button>
+        <ContactButton text="Fale comigo!" />
       </HeroCallToAction>
 
       <HeroImageContainer>

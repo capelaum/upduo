@@ -7,8 +7,6 @@ export const ServicesInfoItemsContainer = styled.section`
 
   gap: 2rem;
 
-  /* border: 1px solid red; */
-
   @media (max-width: 768px) {
     align-items: start;
     flex-direction: column;
