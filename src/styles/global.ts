@@ -17,6 +17,12 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.white};
     -webkit-font-smoothing: antialiased;
+
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   body,

@@ -1,5 +1,8 @@
+import { Header } from 'components/Header'
+import { Hero } from 'components/Hero'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { HomeContainer } from 'styles/pages/home'
 
 const Home: NextPage = () => {
   return (
@@ -7,7 +10,11 @@ const Home: NextPage = () => {
       <Head>
         <title>UpDuo Comunicação</title>
       </Head>
-      <h1>UpDuo</h1>
+      <Header />
+
+      <HomeContainer>
+        <Hero />
+      </HomeContainer>
     </>
   )
 }
