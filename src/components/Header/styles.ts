@@ -4,10 +4,6 @@ export const HeaderContainer = styled.header`
   width: 100%;
   position: fixed;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   background-color: hsl(233 55% 8% / 0.9);
 
   @supports (backdrop-filter: blur(0.25rem)) {
@@ -40,5 +36,9 @@ export const HeaderContent = styled.div`
         color: ${({ theme }) => theme.colors.secondary};
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `
