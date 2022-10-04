@@ -1,10 +1,19 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  width: 100%;
+  position: fixed;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  background-color: hsl(233 55% 8% / 0.9);
+
+  @supports (backdrop-filter: blur(0.25rem)) {
+    backgroundcolor: hsl(233 55% 16% / 0.8);
+    backdropfilter: blur(0.25rem);
+  }
 `
 
 export const HeaderContent = styled.div`

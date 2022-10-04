@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const SolutionsContainer = styled.section`
-  margin-top: 8rem;
+  margin: 10rem 0;
+  gap: 8rem;
 
   display: flex;
   align-items: center;
@@ -17,8 +18,6 @@ export const SolutionsContainer = styled.section`
     gap: 5rem;
     flex-direction: column;
   }
-
-  gap: 8rem;
 `
 
 export const SolutionsContent = styled.div`

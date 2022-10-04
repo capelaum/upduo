@@ -4,7 +4,6 @@ export const ServicesInfoItemsContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: start;
-  /* position: relative; */
 
   gap: 2rem;
 

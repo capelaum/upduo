@@ -7,6 +7,8 @@ export const HeroContainer = styled.section`
   gap: 8rem;
   overflow: hidden;
 
+  margin-top: 8rem;
+
   @media (max-width: 1200px) {
     gap: 5rem;
   }

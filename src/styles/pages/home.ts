@@ -7,3 +7,9 @@ export const HomeContainer = styled.main`
   justify-content: center;
   overflow: hidden;
 `
+
+export const HomeContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

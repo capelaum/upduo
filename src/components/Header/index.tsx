@@ -8,7 +8,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Image src={upduo_logo_white} alt="UpDuo Logo" />
+        <Image src={upduo_logo_white} alt="UpDuo Logo" height={75} />
 
         <nav>
           <Link href="#services">Serviços</Link>

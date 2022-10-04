@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const ServicesContainer = styled.section`
-  margin-top: 5rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
