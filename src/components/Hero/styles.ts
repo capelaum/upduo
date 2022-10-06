@@ -5,7 +5,6 @@ export const HeroContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   gap: 8rem;
-  overflow: hidden;
 
   margin-top: 8rem;
 
