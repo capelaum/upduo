@@ -64,6 +64,11 @@ export const SlideItem = styled.div`
 
   background-color: ${({ theme }) => theme.colors.white};
 
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
   h2 {
     margin-top: 0.75rem;
     margin-bottom: 1.5rem;

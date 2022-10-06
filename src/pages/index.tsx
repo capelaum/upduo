@@ -1,3 +1,4 @@
+import { CallToAction } from 'components/CallToAction'
 import { Header } from 'components/Header'
 import { Hero } from 'components/Hero'
 import { Portfolio } from 'components/Portfolio'
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
           <Services />
           <Testimonials />
           <Portfolio />
+          <CallToAction />
         </HomeContainer>
       </HomeContent>
     </>

@@ -22,7 +22,7 @@ export function Hero() {
 
         <p>Design e Estratégias de marketing para escalar seu negócio!</p>
 
-        <ContactButton text="Fale comigo!" />
+        <ContactButton text="Fale conosco" />
       </HeroCallToAction>
 
       <HeroImageContainer>

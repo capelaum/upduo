@@ -8,7 +8,6 @@ import {
 } from './styles'
 
 import lead_line from 'assets/lead_line.svg'
-import capell from 'assets/portfolio/capell.png'
 import capelletto_advocacia from 'assets/portfolio/capelletto_advocacia.png'
 import yummer from 'assets/portfolio/yummer.png'
 
@@ -26,13 +25,6 @@ const projects = [
     description:
       'O nome Yummer se originou da expressão “Yummy”, que remete à algo saboroso, assim como os produtos da Yummer. O logotipo tem a uma versão principal em escrita e outra versão em símbolo.',
     img: yummer,
-  },
-  {
-    id: 3,
-    name: 'Capell',
-    description:
-      'Foi pensanda e elaborara para mulheres que não encontram em roupas intimas conforto, beleza, elegância em todas as fases da vida, principalmente a partir de uma faixa etária ou após alguma mudança significativa no corpo ou na vida. É uma marca para mulheres fora dos padrões.',
-    img: capell,
   },
 ]
 

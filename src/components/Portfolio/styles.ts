@@ -37,9 +37,9 @@ export const ProjectItem = styled.div`
 
   width: 100%;
 
-  padding: 2rem 1.25rem;
+  padding: 1.5rem 1.25rem;
 
-  border-radius: 20px;
+  border-radius: 1.25rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 
@@ -53,7 +53,7 @@ export const ProjectItem = styled.div`
     flex-direction: column;
     gap: 2rem;
 
-    padding: 2rem 1rem;
+    /* padding: 2rem 1rem; */
 
     img {
       width: 100%;
@@ -98,7 +98,7 @@ export const ProjectItemDetails = styled.div`
 
   @media (max-width: 768px) {
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
     }
 
     p {
