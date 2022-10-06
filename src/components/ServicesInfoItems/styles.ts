@@ -28,7 +28,7 @@ export const ServiceInfoItem = styled.div`
 
   &:first-child {
     padding-right: 2rem;
-    border-right: 1px solid ${({ theme }) => theme.colors['gray-600']};
+    border-right: 1px solid ${({ theme }) => theme.colors.secondary};
   }
 
   @media (max-width: 768px) {
@@ -36,7 +36,7 @@ export const ServiceInfoItem = styled.div`
       padding-right: 0;
       border-right: none;
       padding-bottom: 2rem;
-      border-bottom: 1px solid ${({ theme }) => theme.colors['gray-600']};
+      border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
     }
   }
 `
