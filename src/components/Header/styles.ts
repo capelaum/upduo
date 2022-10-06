@@ -8,6 +8,8 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: center;
 
+  z-index: 3;
+
   background-color: hsl(0 0% 0% / 0.5);
 
   @supports (backdrop-filter: blur(0.25rem)) {

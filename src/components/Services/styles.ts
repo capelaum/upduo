@@ -5,6 +5,7 @@ export const ServicesContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
+  margin-bottom: 5rem;
 
   @media (max-width: 1200px) {
     gap: 2rem;

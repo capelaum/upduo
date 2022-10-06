@@ -3,6 +3,7 @@ import { Hero } from 'components/Hero'
 import { Services } from 'components/Services'
 import { ServicesInfoItems } from 'components/ServicesInfoItems'
 import { Solutions } from 'components/Solutions'
+import { Testimonials } from 'components/Testimonials'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { HomeContainer, HomeContent } from 'styles/pages/home'
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
           <ServicesInfoItems />
           <Solutions />
           <Services />
+          <Testimonials />
         </HomeContainer>
       </HomeContent>
     </>

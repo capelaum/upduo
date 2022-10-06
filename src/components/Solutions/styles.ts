@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SolutionsContainer = styled.section`
-  margin: 10rem 0;
+  margin: 8rem 0;
   gap: 8rem;
 
   display: flex;
