@@ -5,6 +5,8 @@ export const TestimonialsContainer = styled.section`
   flex-direction: column;
   align-items: center;
 
+  padding-bottom: 12rem;
+
   background: radial-gradient(ellipse, #239172 0%, #0e2d3e 70%);
 
   h1 {
@@ -12,13 +14,22 @@ export const TestimonialsContainer = styled.section`
     font-weight: 500;
     margin-bottom: 2rem;
   }
+
+  @media (max-width: 768px) {
+    padding-bottom: 6rem;
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 3rem;
+  }
 `
 
 export const Description = styled.p`
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   margin-bottom: 3rem;
   font-size: 1.5rem;
   text-align: center;
+  font-weight: 500;
   max-width: 25rem;
 `
 
@@ -38,6 +49,7 @@ export const SliderContainer = styled.div`
 export const SlidesContainer = styled.div`
   display: flex;
   align-items: flex-start;
+  width: 100%;
 `
 
 export const SlideItem = styled.div`
@@ -46,10 +58,9 @@ export const SlideItem = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 400px;
   height: 100%;
 
-  padding: 1.4rem;
+  padding: 1.25rem;
 
   background-color: ${({ theme }) => theme.colors.white};
 
@@ -65,7 +76,7 @@ export const SlideItem = styled.div`
     font-size: 1rem;
     text-align: center;
     line-height: 1.6;
-    font-weight: 400;
+    font-weight: 500;
     color: ${({ theme }) => theme.colors['gray-600']};
   }
 

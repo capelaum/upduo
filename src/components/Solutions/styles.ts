@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 
 export const SolutionsContainer = styled.section`
-  margin: 8rem 0;
+  margin-top: 8rem;
   gap: 8rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* border: 1px solid red; */
 
   @media (max-width: 1200px) {
     gap: 4rem;

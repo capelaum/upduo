@@ -101,7 +101,7 @@ export function Testimonials() {
       />
 
       <Description>
-        Confira o que alguns de nossos clientes tem a dizer
+        Confira o que alguns de nossos clientes tem a dizer.
       </Description>
 
       <SliderContainer>
