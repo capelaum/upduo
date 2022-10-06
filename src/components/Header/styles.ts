@@ -4,11 +4,15 @@ export const HeaderContainer = styled.header`
   width: 100%;
   position: fixed;
 
-  background-color: hsl(233 55% 8% / 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: hsl(0 0% 0% / 0.5);
 
   @supports (backdrop-filter: blur(0.25rem)) {
-    backgroundcolor: hsl(233 55% 16% / 0.8);
-    backdropfilter: blur(0.25rem);
+    background-color: hsl(220 63% 19% / 0.8);
+    backdrop-filter: blur(0.25rem);
   }
 `
 
@@ -33,7 +37,7 @@ export const HeaderContent = styled.div`
       transition: all 0.2s ease-in-out;
 
       &:hover {
-        color: ${({ theme }) => theme.colors.secondary};
+        color: ${({ theme }) => theme.colors.greenLight};
       }
     }
   }
