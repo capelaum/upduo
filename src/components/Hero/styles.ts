@@ -6,15 +6,21 @@ export const HeroContainer = styled.section`
   justify-content: space-between;
   gap: 8rem;
 
-  margin-top: 8rem;
+  margin-top: 10rem;
+  margin-bottom: 4.5rem;
+
+  border: 1px solid red;
 
   @media (max-width: 1200px) {
-    gap: 5rem;
+    gap: 4.5rem;
   }
 
   @media (max-width: 768px) {
-    gap: 2rem;
     flex-direction: column;
+  }
+
+  @media (max-width: 576px) {
+    margin-top: 14rem;
   }
 `
 
@@ -55,6 +61,7 @@ export const HeroCallToAction = styled.div`
     p {
       font-size: 1.25rem;
       text-align: center;
+      margin-bottom: 3.5rem;
     }
   }
 `
@@ -64,5 +71,6 @@ export const HeroImageContainer = styled.div`
 
   img {
     width: 100%;
+    height: 100%;
   }
 `
