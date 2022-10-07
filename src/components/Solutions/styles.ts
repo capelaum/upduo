@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const SolutionsContainer = styled.section`
-  margin: 8rem 0;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
   gap: 8rem;
 
   display: flex;
@@ -14,6 +15,8 @@ export const SolutionsContainer = styled.section`
 
   @media (max-width: 768px) {
     gap: 5rem;
+    margin-bottom: 4rem;
+
     flex-direction: column;
   }
 `

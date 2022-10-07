@@ -12,7 +12,7 @@ export const ServicesContainer = styled.section`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `
 
@@ -30,10 +30,21 @@ export const ServicesContent = styled.div`
 `
 
 export const ServicesImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   flex: 50%;
 
   img {
     width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+    }
   }
 `
 

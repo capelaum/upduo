@@ -1,3 +1,4 @@
+import Image from 'next/future/image'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 import { TbTarget } from 'react-icons/tb'
 import {
@@ -10,7 +11,6 @@ import {
 } from './styles'
 
 import services from 'assets/services.svg'
-import Image from 'next/future/image'
 
 export function Services() {
   return (
