@@ -13,7 +13,7 @@ export const HomeContent = styled.div`
 export const HomeContainer = styled.main`
   max-width: 1200px;
   width: 100%;
-  padding: 2rem;
+  padding: 1.25rem;
   justify-content: center;
 
   @media (max-width: 768px) {

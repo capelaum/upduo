@@ -21,11 +21,12 @@ export const HeaderContainer = styled.header`
 export const HeaderContent = styled.div`
   max-width: 1200px;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 1.25rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 
   nav {
     display: flex;
@@ -44,7 +45,14 @@ export const HeaderContent = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     flex-direction: column;
+    padding: 2rem 1.25rem;
+  }
+
+  @media (max-width: 480px) {
+    nav a {
+      font-size: 1rem;
+    }
   }
 `

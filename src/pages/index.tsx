@@ -1,4 +1,5 @@
 import { CallToAction } from 'components/CallToAction'
+import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
 import { Hero } from 'components/Hero'
 import { Portfolio } from 'components/Portfolio'
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
           <Testimonials />
           <Portfolio />
           <CallToAction />
+          <Footer />
         </HomeContainer>
       </HomeContent>
     </>
