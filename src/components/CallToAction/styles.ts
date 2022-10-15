@@ -28,6 +28,11 @@ export const CallToActionContainer = styled.section`
 
   @media (max-width: 480px) {
     padding: 1.5rem 2rem;
+
+    button {
+      padding: 1rem 0.5rem;
+      min-width: 100%;
+    }
   }
 `
 
