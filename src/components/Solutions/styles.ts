@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 export const SolutionsContainer = styled.section`
-  margin-top: 8rem;
-  margin-bottom: 8rem;
-  gap: 8rem;
+  margin: 8rem 0;
+  gap: 5rem;
 
   display: flex;
   align-items: center;
@@ -21,7 +20,18 @@ export const SolutionsContainer = styled.section`
   }
 `
 
+export const SolutionsImageContainer = styled.div`
+  flex: 40%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`
+
 export const SolutionsContent = styled.div`
+  flex: 60%;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;

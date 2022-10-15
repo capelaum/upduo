@@ -58,7 +58,11 @@ const testimonials = [
   },
 ]
 
-export function Testimonials() {
+interface TestimonialsProps {
+  id?: string
+}
+
+export function Testimonials({ id }: TestimonialsProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
 
@@ -92,7 +96,7 @@ export function Testimonials() {
   })
 
   return (
-    <TestimonialsContainer>
+    <TestimonialsContainer id={id}>
       <h1>Depoimentos</h1>
 
       <Image

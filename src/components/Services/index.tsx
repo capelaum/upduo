@@ -12,9 +12,13 @@ import {
 
 import services from 'assets/services.svg'
 
-export function Services() {
+interface ServicesProps {
+  id?: string
+}
+
+export function Services({ id }: ServicesProps) {
   return (
-    <ServicesContainer>
+    <ServicesContainer id={id}>
       <ServicesContent>
         <h1>
           Encontre de forma criativa soluções comunicacionais, estratégicas e

@@ -9,6 +9,7 @@ import { Solutions } from 'components/Solutions'
 import { Testimonials } from 'components/Testimonials'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
 import { HomeContainer, HomeContent } from 'styles/pages/home'
 
 const Home: NextPage = () => {
@@ -20,18 +21,18 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <HomeContent>
-        <HomeContainer>
+      <HomeContainer>
+        <HomeContent>
           <Hero />
           <ServicesInfoItems />
           <Solutions />
-          <Services />
-          <Testimonials />
-          <Portfolio />
+          <Services id="services" />
+          <Testimonials id="testimonials" />
+          <Portfolio id="portfolio" />
           <CallToAction />
           <Footer />
-        </HomeContainer>
-      </HomeContent>
+        </HomeContent>
+      </HomeContainer>
     </>
   )
 }

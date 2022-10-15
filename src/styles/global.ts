@@ -11,7 +11,15 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
   }
+
+  @media (max-width: 576px) {
+    html {
+      scroll-padding-top: 12rem;
+    }
+  }
+
 
   body {
     background: ${({ theme }) => theme.colors.primary};

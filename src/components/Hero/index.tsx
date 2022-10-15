@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <HeroContainer>
       <HeroSquareImageContainer>
-        <Image src={hero_square} alt="" />
+        <Image src={hero_square} alt="Losango azul com baixa opacidade" />
       </HeroSquareImageContainer>
 
       <HeroCallToAction>

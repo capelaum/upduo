@@ -21,7 +21,7 @@ export const HeaderContainer = styled.header`
 export const HeaderContent = styled.div`
   max-width: 1200px;
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 0.5rem 1.25rem;
 
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@ export const HeaderContent = styled.div`
     gap: 2rem;
 
     a {
-      font-size: 1.125rem;
+      font-size: 1rem;
       color: ${({ theme }) => theme.colors.white};
       text-decoration: none;
       transition: all 0.2s ease-in-out;

@@ -11,9 +11,15 @@ export function Header() {
         <Image src={upduo_logo_white} alt="UpDuo Logo" height={75} />
 
         <nav>
-          <Link href="#services">Serviços</Link>
-          <Link href="#testimonials">Depoimentos</Link>
-          <Link href="#portfolio">Portfolio</Link>
+          <Link href="#services" scroll={false}>
+            Serviços
+          </Link>
+          <Link href="#testimonials" scroll={false}>
+            Depoimentos
+          </Link>
+          <Link href="#portfolio" scroll={false}>
+            Portfolio
+          </Link>
         </nav>
       </HeaderContent>
     </HeaderContainer>

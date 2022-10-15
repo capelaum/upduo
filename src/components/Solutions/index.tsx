@@ -1,5 +1,9 @@
 import Image from 'next/future/image'
-import { SolutionsContainer, SolutionsContent } from './styles'
+import {
+  SolutionsContainer,
+  SolutionsContent,
+  SolutionsImageContainer,
+} from './styles'
 
 import solutions from 'assets/solutions.svg'
 import { ContactButton } from 'components/ContactButton'
@@ -7,7 +11,9 @@ import { ContactButton } from 'components/ContactButton'
 export function Solutions() {
   return (
     <SolutionsContainer>
-      <Image src={solutions} alt="Gráficos coloridos." />
+      <SolutionsImageContainer>
+        <Image src={solutions} alt="Gráficos coloridos." />
+      </SolutionsImageContainer>
 
       <SolutionsContent>
         <h1>Soluções criativas e estratégicas para escalar seu negócio! </h1>

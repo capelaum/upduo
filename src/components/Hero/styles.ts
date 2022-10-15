@@ -6,10 +6,7 @@ export const HeroContainer = styled.section`
   justify-content: space-between;
   gap: 8rem;
 
-  margin-top: 10rem;
   margin-bottom: 4.5rem;
-
-  border: 1px solid red;
 
   @media (max-width: 1200px) {
     gap: 4.5rem;
@@ -17,10 +14,6 @@ export const HeroContainer = styled.section`
 
   @media (max-width: 768px) {
     flex-direction: column;
-  }
-
-  @media (max-width: 576px) {
-    margin-top: 14rem;
   }
 `
 

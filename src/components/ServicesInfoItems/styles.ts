@@ -43,8 +43,20 @@ export const ServiceInfoItem = styled.div`
 
 export const ServicesSquareImageContainer = styled.div`
   position: absolute;
-  top: 48rem;
+  top: 40rem;
   left: 0;
   z-index: -1;
   opacity: 0.3;
+
+  @media (max-width: 576px) {
+    img {
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    img {
+      width: 250px;
+    }
+  }
 `

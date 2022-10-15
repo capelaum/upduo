@@ -28,9 +28,13 @@ const projects = [
   },
 ]
 
-export function Portfolio() {
+interface PortfolioProps {
+  id?: string
+}
+
+export function Portfolio({ id }: PortfolioProps) {
   return (
-    <PortfolioContainer>
+    <PortfolioContainer id={id}>
       <h1>Portfolio</h1>
 
       <Image
