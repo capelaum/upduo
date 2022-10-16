@@ -18,13 +18,13 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <Favicon />
-
           <Seo
             title="UpDuos Comunicação"
             url="https://upduo.vercel.app"
             description="Design e Estratégias de marketing para escalar seu negócio!"
           />
+
+          <Favicon />
         </Head>
         <body>
           <Main />
