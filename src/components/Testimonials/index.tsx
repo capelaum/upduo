@@ -74,7 +74,10 @@ export function Testimonials({ id }: TestimonialsProps) {
       <SliderContainer>
         {slider.current && (
           <SliderArrow
-            onClick={(e: any) => e.stopPropagation() || slider.current?.prev()}
+            onClick={(e: any) => {
+              e.stopPropagation()
+              slider.current?.prev()
+            }}
           >
             <TbChevronLeft size={48} color="#fff" />
           </SliderArrow>
@@ -97,7 +100,10 @@ export function Testimonials({ id }: TestimonialsProps) {
 
         {slider.current && (
           <SliderArrow
-            onClick={(e: any) => e.stopPropagation() || slider.current?.next()}
+            onClick={(e: any) => {
+              e.stopPropagation()
+              slider.current?.next()
+            }}
           >
             <TbChevronRight size={48} color="#fff" />
           </SliderArrow>
