@@ -49,9 +49,9 @@ export function Testimonials({ id }: TestimonialsProps) {
     created(slider) {
       setLoaded(true)
     },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
-    },
+    // slideChanged(slider) {
+    //   setCurrentSlide(slider.track.details.rel)
+    // },
   })
 
   return (
