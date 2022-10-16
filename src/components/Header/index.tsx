@@ -1,4 +1,4 @@
-import { HeaderDropdownMenu } from 'components/DropdownMenu'
+import { HeaderDropdownMenu } from 'components/HeaderDropdownMenu'
 import Image from 'next/future/image'
 import Link from 'next/link'
 import { HeaderContainer, HeaderContent } from './styles'
@@ -10,7 +10,9 @@ export function Header() {
     <HeaderContainer>
       <HeaderContent>
         <Link href="/" passHref>
-          <Image src={upduo_logo_white} alt="UpDuo Logo" height={75} />
+          <div>
+            <Image src={upduo_logo_white} alt="UpDuo Logo" height={75} />
+          </div>
         </Link>
 
         <nav>
