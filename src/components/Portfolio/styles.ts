@@ -1,108 +1,106 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-export const PortfolioContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const PortfolioContainer = styled('section', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 
-  margin: 4rem 0;
+  margin: '4rem 0',
 
-  h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-  }
-`
+  h1: {
+    fontSize: '$2xl',
+    fontWeight: 500,
+    marginBottom: '2rem',
+  },
+})
 
-export const Description = styled.p`
-  margin-top: 1.25rem;
-  margin-bottom: 5rem;
-  font-size: 1.5rem;
-  text-align: center;
-  font-weight: 500;
-  max-width: 25rem;
-`
+export const Description = styled('p', {
+  marginTop: '1.25rem',
+  marginBottom: '5rem',
+  fontSize: '1.5rem',
+  textAlign: 'center',
+  fontWeight: 500,
+  maxWidth: '25rem',
+})
 
-export const ProjectsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-`
+export const ProjectsContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2.5rem',
+})
 
-export const ProjectItem = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+export const ProjectItem = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '3rem',
 
-  width: 100%;
+  width: '100%',
 
-  padding: 1.5rem 1.25rem;
+  padding: '1.5rem 1.25rem',
 
-  border-radius: 1.25rem;
+  borderRadius: '1.25rem',
 
-  background-color: ${({ theme }) => theme.colors.white};
+  backgroundColor: '$white',
 
-  img {
-    width: 40%;
-    object-fit: cover;
-    border-radius: 1.25rem;
-  }
+  img: {
+    width: '40%',
+    objectFit: 'cover',
+    borderRadius: '1.25rem',
+  },
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 2rem;
+  '@bp1': {
+    flexDirection: 'column',
+    gap: '2rem',
 
-    /* padding: 2rem 1rem; */
+    img: {
+      width: '100%',
+      borderRadius: 'none',
+    },
+  },
+})
 
-    img {
-      width: 100%;
-      border-radius: none;
-    }
-  }
-`
+export const ProjectItemDetails = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
 
-export const ProjectItemDetails = styled.div`
-  display: flex;
-  flex-direction: column;
+  alignSelf: 'stretch',
 
-  align-self: stretch;
+  h2: {
+    fontSize: '$2xl',
+    fontWeight: 500,
+    color: '$blue700',
+    marginBottom: '2rem',
+  },
 
-  h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: ${({ theme }) => theme.colors.primary};
-    margin-bottom: 2rem;
-  }
+  p: {
+    marginBottom: '1.25rem',
+    fontSize: '$md',
+    lineHeight: 1.6,
+    fontWeight: 500,
+    color: '$gray500',
+  },
 
-  p {
-    margin-bottom: 1.25rem;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    font-weight: 500;
-    color: ${({ theme }) => theme.colors['gray-600']};
-  }
+  a: {
+    fontSize: '1.125rem',
+    fontWeight: 700,
+    color: '$green500',
+    textDecoration: 'none',
 
-  a {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.secondary};
-    text-decoration: none;
+    transition: 'all 0.2s ease-in-out',
 
-    transition: all 0.2s ease-in-out;
+    '&:hover': {
+      color: '$green200',
+    },
+  },
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.greenLight};
-    }
-  }
+  '@bp1': {
+    h2: {
+      fontSize: '$xl',
+    },
 
-  @media (max-width: 768px) {
-    h2 {
-      font-size: 1.75rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-  }
-`
+    p: {
+      fontSize: '$sm',
+    },
+  },
+})

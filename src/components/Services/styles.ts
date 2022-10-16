@@ -1,93 +1,92 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-export const ServicesContainer = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-  margin-bottom: 5rem;
+export const ServicesContainer = styled('section', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '4rem',
+  marginBottom: '5rem',
 
-  @media (max-width: 1200px) {
-    gap: 2rem;
-  }
+  '@media (max-width: 1200px)': {
+    gap: '2rem',
+  },
 
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-  }
-`
+  '@bp1': {
+    flexDirection: 'column-reverse',
+  },
+})
 
-export const ServicesContent = styled.div`
-  flex: 50%;
+export const ServicesContent = styled('div', {
+  flex: '50%',
 
-  gap: 1rem;
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
 
-  display: flex;
-  flex-direction: column;
+  h1: {
+    fontSize: '$xl',
+  },
+})
 
-  h1 {
-    font-size: 1.75rem;
-  }
-`
+export const ServicesImageContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-export const ServicesImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: '50%',
 
-  flex: 50%;
+  img: {
+    width: '100%',
+    height: '100%',
+  },
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
+  '@bp1': {
+    img: {
+      width: '100%',
+    },
+  },
+})
 
-  @media (max-width: 768px) {
-    img {
-      width: 100%;
-    }
-  }
-`
+export const ServiceItemsContainer = styled('div', {
+  marginTop: '2rem',
+  display: 'flex',
+  gap: '2.25rem',
 
-export const ServiceItemsContainer = styled.div`
-  margin-top: 2rem;
-  display: flex;
-  gap: 2.25rem;
+  '@bp1': {
+    flexDirection: 'column',
+  },
+})
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`
+export const ServiceItem = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: '1rem',
 
-export const ServiceItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
+  h2: {
+    fontSize: '$xl',
+    fontWeight: 400,
+  },
 
-  h2 {
-    font-size: 1.75rem;
-    font-weight: 400;
-  }
+  p: {
+    fontSize: '$md',
+    color: '$gray100',
+  },
+})
 
-  p {
-    font-size: 1.125rem;
-    color: ${({ theme }) => theme.colors['gray-100']};
-  }
-`
+export const ServiceItemIconContainer = styled('div', {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-export const ServiceItemIconContainer = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  padding: '0.25rem',
 
-  padding: 0.25rem;
+  borderRadius: 8,
+  backgroundColor: '$green500',
 
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  transform: 'rotate(45deg)',
 
-  transform: rotate(45deg);
-
-  svg {
-    transform: rotate(-45deg);
-  }
-`
+  svg: {
+    transform: 'rotate(-45deg)',
+  },
+})

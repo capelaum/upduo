@@ -3,12 +3,12 @@ import { ContactButtonContainer } from './styles'
 
 interface ContactButtonProps {
   text: string
-  variant?: 'default' | 'light'
+  variant?: 'primary' | 'secondary'
 }
 
 export function ContactButton({
   text,
-  variant = 'default',
+  variant = 'primary',
 }: ContactButtonProps) {
   return (
     <ContactButtonContainer variant={variant}>

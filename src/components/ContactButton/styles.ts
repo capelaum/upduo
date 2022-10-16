@@ -1,30 +1,40 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-interface ContactButtonContainerProps {
-  variant: 'default' | 'light'
-}
+export const ContactButtonContainer = styled('button', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '0.75rem',
 
-export const ContactButtonContainer = styled.button<ContactButtonContainerProps>`
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  fontSize: '$lg',
+  textTransform: 'uppercase',
+  borderRadius: 8,
+  padding: '1rem 2rem',
 
-  background-color: ${({ theme, variant }) =>
-    variant === 'default' ? theme.colors.secondary : theme.colors.white};
-  color: ${({ theme, variant }) =>
-    variant === 'default' ? theme.colors.white : theme.colors.secondary};
+  transition: 'all 0.2s ease-in-out',
 
-  font-size: 1.25rem;
-  text-transform: uppercase;
+  variants: {
+    variant: {
+      primary: {
+        color: '$white',
+        backgroundColor: '$green500',
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+        '&:hover': {
+          backgroundColor: '$green200',
+        },
+      },
+      secondary: {
+        color: '$green500',
+        backgroundColor: '$white',
 
-  transition: all 0.2s ease-in-out;
+        '&:hover': {
+          backgroundColor: '$gray100',
+        },
+      },
+    },
+  },
 
-  &:hover {
-    background-color: ${({ theme, variant }) =>
-      variant === 'default' ? theme.colors.greenLight : '#fff'};
-  }
-`
+  defaultVariants: {
+    variant: 'primary',
+  },
+})

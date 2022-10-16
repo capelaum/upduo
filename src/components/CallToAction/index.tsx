@@ -10,7 +10,7 @@ export function CallToAction() {
         <p>Entre em contato e vamos tornar o seu projeto possível.</p>
       </CallToActionContent>
 
-      <ContactButton text="Fale conosco" variant="light" />
+      <ContactButton text="Fale conosco" variant="secondary" />
     </CallToActionContainer>
   )
 }

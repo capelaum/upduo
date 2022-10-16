@@ -1,69 +1,69 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-export const HeroContainer = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8rem;
+export const HeroContainer = styled('section', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '8rem',
 
-  margin-bottom: 4.5rem;
+  marginBottom: '4.5rem',
 
-  @media (max-width: 1200px) {
-    gap: 4.5rem;
-  }
+  '@media (max-width: 1200px)': {
+    gap: '4.5rem',
+  },
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`
+  '@bp1': {
+    flexDirection: 'column',
+  },
+})
 
-export const HeroSquareImageContainer = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  opacity: 0.3;
-`
+export const HeroSquareImageContainer = styled('div', {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  zIndex: -1,
+  opacity: 0.3,
+})
 
-export const HeroCallToAction = styled.div`
-  flex: 50%;
+export const HeroCallToAction = styled('div', {
+  flex: '50%',
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
 
-  h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-  }
+  h2: {
+    fontSize: '$3xl',
+    fontWeight: 700,
+    marginBottom: '1.25rem',
+  },
 
-  p {
-    font-size: 1.5rem;
-    margin-bottom: 1.75rem;
-  }
+  p: {
+    fontSize: '$xl',
+    marginBottom: '1.75rem',
+  },
 
-  @media (max-width: 768px) {
-    align-items: center;
+  '@bp1': {
+    alignItems: 'center',
 
-    h2 {
-      font-size: 2.5rem;
-      text-align: center;
-    }
+    h2: {
+      fontSize: '$2xl',
+      textAlign: 'center',
+    },
 
-    p {
-      font-size: 1.25rem;
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-  }
-`
+    p: {
+      fontSize: '$md',
+      textAlign: 'center',
+      marginBottom: '3.5rem',
+    },
+  },
+})
 
-export const HeroImageContainer = styled.div`
-  flex: 50%;
+export const HeroImageContainer = styled('div', {
+  flex: '50%',
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
-`
+  img: {
+    width: '100%',
+    height: '100%',
+  },
+})

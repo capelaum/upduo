@@ -1,49 +1,49 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-export const SolutionsContainer = styled.section`
-  margin: 8rem 0;
-  gap: 5rem;
+export const SolutionsContainer = styled('section', {
+  margin: '8rem 0',
+  gap: '5rem',
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 
-  @media (max-width: 1200px) {
-    gap: 4rem;
-  }
+  '@media (max-width: 1200px)': {
+    gap: '4rem',
+  },
 
-  @media (max-width: 768px) {
-    gap: 5rem;
-    margin-bottom: 4rem;
+  '@bp1': {
+    gap: '5rem',
+    marginBottom: '4rem',
 
-    flex-direction: column;
-  }
-`
+    flexDirection: 'column',
+  },
+})
 
-export const SolutionsImageContainer = styled.div`
-  flex: 40%;
+export const SolutionsImageContainer = styled('div', {
+  flex: '40%',
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
-`
+  img: {
+    width: '100%',
+    height: '100%',
+  },
+})
 
-export const SolutionsContent = styled.div`
-  flex: 60%;
+export const SolutionsContent = styled('div', {
+  flex: '60%',
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: '2rem',
 
-  h1 {
-    font-size: 2rem;
-  }
+  h1: {
+    fontSize: '$22xl',
+  },
 
-  p {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-`
+  p: {
+    fontSize: '$md',
+    marginBottom: '1rem',
+    lineHeight: 1.6,
+  },
+})
