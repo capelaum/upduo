@@ -25,7 +25,7 @@ export function Testimonials({ id }: TestimonialsProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
 
-  const [sliderRef, instanceRef] = useKeenSlider({
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     loop: true,
     slides: {
@@ -46,12 +46,12 @@ export function Testimonials({ id }: TestimonialsProps) {
         },
       },
     },
-    created(slider) {
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
+    },
+    created() {
       setLoaded(true)
     },
-    // slideChanged(slider) {
-    //   setCurrentSlide(slider.track.details.rel)
-    // },
   })
 
   return (
@@ -68,9 +68,15 @@ export function Testimonials({ id }: TestimonialsProps) {
       </Description>
 
       <SliderContainer>
-        <SliderArrow onClick={() => instanceRef.current?.prev()}>
-          <TbChevronLeft size={48} color="#fff" />
-        </SliderArrow>
+        {loaded && instanceRef.current && (
+          <SliderArrow
+            onClick={(e: any) =>
+              e.stopPropagation() || instanceRef.current?.prev()
+            }
+          >
+            <TbChevronLeft size={48} color="#fff" />
+          </SliderArrow>
+        )}
 
         <SlidesContainer ref={sliderRef} className="keen-slider">
           {testimonials.map((testimonial, index) => (
@@ -84,9 +90,15 @@ export function Testimonials({ id }: TestimonialsProps) {
           ))}
         </SlidesContainer>
 
-        <SliderArrow onClick={() => instanceRef.current?.next()}>
-          <TbChevronRight size={48} color="#fff" />
-        </SliderArrow>
+        {loaded && instanceRef.current && (
+          <SliderArrow
+            onClick={(e: any) =>
+              e.stopPropagation() || instanceRef.current?.next()
+            }
+          >
+            <TbChevronRight size={48} color="#fff" />
+          </SliderArrow>
+        )}
       </SliderContainer>
     </TestimonialsContainer>
   )
