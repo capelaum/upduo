@@ -78,7 +78,7 @@ export const ProjectItemDetails = styled('div', {
     fontSize: '$md',
     lineHeight: 1.6,
     fontWeight: 500,
-    color: '$gray500',
+    color: '$gray600',
   },
 
   a: {

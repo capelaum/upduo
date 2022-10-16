@@ -56,11 +56,8 @@ export const SlideItem = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'start',
-
   padding: '1.25rem',
-
   backgroundColor: '$white',
-
   borderRadius: 20,
 
   img: {
@@ -81,7 +78,7 @@ export const SlideItem = styled('div', {
     textAlign: 'center',
     lineHeight: 1.6,
     fontWeight: 500,
-    color: '$gray500',
+    color: '$gray600',
   },
 })
 

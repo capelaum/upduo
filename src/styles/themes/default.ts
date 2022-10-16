@@ -15,6 +15,7 @@ export const {
       white: '#fff',
       black: '#000',
 
+      green600: '#168566',
       green500: '#239172',
       green200: '#2AB793',
       green100: '#45D0B2',
@@ -23,6 +24,7 @@ export const {
 
       gray900: '#121214',
       gray800: '#202024',
+      gray600: '#696969',
       gray500: '#8D8D99',
       gray300: '#C4C4CC',
       gray100: '#E1E1E6',
