@@ -26,11 +26,9 @@ export function Testimonials({ id }: TestimonialsProps) {
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
     loop: true,
-    renderMode: 'performance',
     slides: {
       perView: 3,
       spacing: 20,
-      origin: 'center',
     },
     breakpoints: {
       '(max-width: 1200px)': {
@@ -45,6 +43,12 @@ export function Testimonials({ id }: TestimonialsProps) {
           spacing: 16,
         },
       },
+    },
+    created(slider) {
+      setLoaded(true)
+    },
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
     },
   })
 
