@@ -34,20 +34,9 @@ export const Description = styled('p', {
 })
 
 export const SliderContainer = styled('div', {
+  maxWidth: 1200,
   width: '100%',
-  height: '100%',
 
-  position: 'relative',
-
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-
-  // border: '1px solid yellow',
-})
-
-export const SlidesContainer = styled('div', {
-  maxWidth: '100%',
   cursor: 'grab',
 })
 
@@ -61,6 +50,7 @@ export const SlideItem = styled('div', {
   borderRadius: 20,
 
   img: {
+    objectFit: 'cover',
     width: 50,
     height: 50,
   },
@@ -82,9 +72,16 @@ export const SlideItem = styled('div', {
   },
 })
 
+export const SliderArrowContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginTop: '1.5rem',
+  gap: '1rem',
+})
+
 export const SliderArrow = styled('button', {
   zIndex: 2,
-
   backgroundColor: '$transparent',
 
   variants: {
@@ -101,7 +98,7 @@ export const SliderArrow = styled('button', {
   '&:hover': {
     svg: {
       transition: 'all 0.2s ease-in-out',
-      stroke: '$green500',
+      stroke: '$blue500',
     },
   },
 
@@ -112,9 +109,5 @@ export const SliderArrow = styled('button', {
       transition: 'all 0.3s ease-in-out',
       stroke: '$gray500',
     },
-  },
-
-  '@bp3': {
-    display: 'none',
   },
 })

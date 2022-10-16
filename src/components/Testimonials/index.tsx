@@ -8,8 +8,8 @@ import {
   Description,
   SlideItem,
   SliderArrow,
+  SliderArrowContainer,
   SliderContainer,
-  SlidesContainer,
   TestimonialsContainer,
 } from './styles'
 
@@ -29,8 +29,9 @@ export function Testimonials({ id }: TestimonialsProps) {
 
   useEffect(() => {
     setOptions({
-      slidesPerView: 3,
-      mode: 'free',
+      initial: 0,
+      mode: 'snap',
+      drag: true,
       loop: true,
       slides: {
         perView: 3,
@@ -72,30 +73,31 @@ export function Testimonials({ id }: TestimonialsProps) {
         Confira o que alguns de nossos clientes tem a dizer.
       </Description>
 
-      <SliderContainer>
-        <SliderArrow onClick={() => slider.current?.prev()}>
+      <SliderContainer ref={sliderRef} className="keen-slider">
+        {testimonials.map((testimonial, index) => (
+          <SlideItem key={index} className="keen-slider__slide">
+            <Image src={testimonial.img} alt={testimonial.name} />
+            <h2>{testimonial.name}</h2>
+            <p>{testimonial.comment}</p>
+          </SlideItem>
+        ))}
+      </SliderContainer>
+
+      <SliderArrowContainer>
+        <SliderArrow
+          direction="left"
+          onClick={(e: any) => e.stopPropagation() || slider.current?.prev()}
+        >
           <TbChevronLeft size={48} color="#fff" />
         </SliderArrow>
 
-        <SlidesContainer ref={sliderRef} className="keen-slider">
-          {testimonials.map((testimonial, index) => (
-            <SlideItem
-              key={index}
-              className={`keen-slider__slide number-slide${index}`}
-            >
-              <Image src={testimonial.img} alt={testimonial.name} />
-
-              <h2>{testimonial.name}</h2>
-
-              <p>{testimonial.comment}</p>
-            </SlideItem>
-          ))}
-        </SlidesContainer>
-
-        <SliderArrow onClick={() => slider.current?.next()}>
+        <SliderArrow
+          direction="right"
+          onClick={(e: any) => e.stopPropagation() || slider.current?.next()}
+        >
           <TbChevronRight size={48} color="#fff" />
         </SliderArrow>
-      </SliderContainer>
+      </SliderArrowContainer>
     </TestimonialsContainer>
   )
 }
