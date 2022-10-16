@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 import { testimonials } from './data'
 
+import 'keen-slider/keen-slider.min.css'
+
 import {
   Description,
   SlideItem,

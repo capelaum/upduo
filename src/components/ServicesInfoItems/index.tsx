@@ -12,7 +12,7 @@ export function ServicesInfoItems() {
     <ServicesInfoItemsContainer>
       <ServiceInfoItem>
         <h1>Design</h1>
-        <p>O design está em tudo que a nossa volta.</p>
+        <p>O design está em tudo à nossa volta.</p>
       </ServiceInfoItem>
 
       <ServiceInfoItem>
