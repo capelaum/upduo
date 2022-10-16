@@ -37,11 +37,11 @@ export const SliderContainer = styled('div', {
   width: '100%',
   height: '100%',
 
-  // position: 'relative',
+  position: 'relative',
 
   display: 'flex',
   // alignItems: 'center',
-  justifyContent: 'space-between',
+  // justifyContent: 'space-between',
 
   cursor: 'grab',
 })
@@ -87,10 +87,28 @@ export const SlideItem = styled('div', {
 
 export const SliderArrow = styled('button', {
   zIndex: 2,
+  position: 'absolute',
+  // top: '50%',
+  // transform: 'translateY(-50%)',
+  top: 0,
+  bottom: 0,
 
-  border: '1px solid red',
+  variants: {
+    direction: {
+      left: {
+        left: 0,
+        background:
+          'linear-gradient(90deg, rgba(14,45,62,0.7) 0%, rgba(0,0,0,0) 100%)',
+      },
+      right: {
+        right: 0,
+        background:
+          'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(14,45,62,0.7) 100%)',
+      },
+    },
+  },
 
-  background: 'transparent',
+  // border: '1px solid red',
 
   '&:hover': {
     svg: {
