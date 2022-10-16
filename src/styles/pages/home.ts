@@ -1,21 +1,17 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-export const HomeContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const HomeContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 
-  position: relative;
-`
+  position: 'relative',
+})
 
-export const HomeContent = styled.main`
-  max-width: 1200px;
-  width: 100%;
+export const HomeContent = styled('main', {
+  maxWidth: '1200px',
+  width: '100%',
 
-  padding: 0 1.25rem;
-  margin-top: 10rem;
-
-  @media (max-width: 576px) {
-    margin-top: 14rem;
-  }
-`
+  padding: '0 1.25rem',
+  marginTop: '12rem',
+})

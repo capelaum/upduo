@@ -1,53 +1,59 @@
-import { createGlobalStyle } from 'styled-components'
+import { globalCss } from './themes/default'
 
-export const GlobalStyle = createGlobalStyle`
-  *,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+export const globalStyles = globalCss({
+  '*': {
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box',
+  },
+  html: {
+    scrollBehavior: 'smooth',
+    scrollPaddingTop: '8rem',
+  },
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 8rem;
-  }
+  body: {
+    backgroundColor: '$blue500',
+    color: '$white',
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: 400,
+    fontSize: '1rem',
 
-  @media (max-width: 576px) {
-    html {
-      scroll-padding-top: 12rem;
-    }
-  }
+    scrollbarWidth: 'thin',
+    scrollbarColor: '$green200 $green200',
 
+    '&::-webkit-scrollbar': {
+      background: '$gray800',
+      width: '10px',
+      '&:hover': {
+        background: '$gray800',
+        width: '10px',
+      },
+    },
 
-  body {
-    background: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.white};
-    -webkit-font-smoothing: antialiased;
+    '&::-webkit-scrollbar-thumb': {
+      background: '$green500',
+      borderRadius: '50px',
+      width: '10px',
+      '&:hover': {
+        background: '$green200',
+        width: '10px',
+      },
+    },
+  },
+  'h1, h2, h3, h4, h5, h6': {
+    color: '$white',
+  },
 
-    font-family: 'Roboto', sans-serif;
-  }
+  'a, button': {
+    cursor: 'pointer',
+    border: 'none',
 
-  body,
-  input,
-  textarea,
-  button {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-  }
+    '&:disabled': {
+      cursor: 'not-allowed',
+    },
 
-  button {
-    cursor: pointer;
-    border: none;
-  }
-
-  [disabled] {
-    cursor: not-allowed;
-  }
-
-  :focus {
-    outline: none;
-  }
-`
+    '&:focus': {
+      outline: 'none',
+    },
+  },
+})

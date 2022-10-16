@@ -1,7 +1,6 @@
 import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
-import { useState } from 'react'
-import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
+import { useEffect, useState } from 'react'
 import { testimonials } from './data'
 
 import 'keen-slider/keen-slider.min.css'
@@ -16,43 +15,41 @@ import {
 } from './styles'
 
 import lead_line from 'assets/lead_line.svg'
+import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 
 interface TestimonialsProps {
   id?: string
 }
 
 export function Testimonials({ id }: TestimonialsProps) {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [loaded, setLoaded] = useState(false)
+  const [options, setOptions] = useState({})
+  const [sliderRef, slider] = useKeenSlider(options)
 
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    loop: true,
-    slides: {
-      perView: 3,
-      spacing: 20,
-    },
-    breakpoints: {
-      '(max-width: 1200px)': {
-        slides: {
-          perView: 2,
-          spacing: 20,
+  useEffect(() => {
+    setOptions({
+      slidesPerView: 3,
+      mode: 'free',
+      loop: true,
+      slides: {
+        perView: 3,
+        spacing: 20,
+      },
+      breakpoints: {
+        '(max-width: 1200px)': {
+          slides: {
+            perView: 2,
+            spacing: 20,
+          },
+        },
+        '(max-width: 768px)': {
+          slides: {
+            perView: 1,
+            spacing: 16,
+          },
         },
       },
-      '(max-width: 768px)': {
-        slides: {
-          perView: 1,
-          spacing: 16,
-        },
-      },
-    },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
-    },
-    created() {
-      setLoaded(true)
-    },
-  })
+    })
+  }, [])
 
   return (
     <TestimonialsContainer id={id}>
@@ -68,19 +65,18 @@ export function Testimonials({ id }: TestimonialsProps) {
       </Description>
 
       <SliderContainer>
-        {loaded && instanceRef.current && (
-          <SliderArrow
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.prev()
-            }
-          >
+        {slider.current && (
+          <SliderArrow onClick={() => slider.current?.prev()}>
             <TbChevronLeft size={48} color="#fff" />
           </SliderArrow>
         )}
 
         <SlidesContainer ref={sliderRef} className="keen-slider">
           {testimonials.map((testimonial, index) => (
-            <SlideItem key={index} className="keen-slider__slide">
+            <SlideItem
+              key={index}
+              className={`keen-slider__slide number-slide${index}`}
+            >
               <Image src={testimonial.img} alt={testimonial.name} />
 
               <h2>{testimonial.name}</h2>
@@ -90,12 +86,8 @@ export function Testimonials({ id }: TestimonialsProps) {
           ))}
         </SlidesContainer>
 
-        {loaded && instanceRef.current && (
-          <SliderArrow
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.next()
-            }
-          >
+        {slider.current && (
+          <SliderArrow onClick={() => slider.current?.next()}>
             <TbChevronRight size={48} color="#fff" />
           </SliderArrow>
         )}

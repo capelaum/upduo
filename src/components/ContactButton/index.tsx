@@ -1,19 +1,27 @@
-import { MdSend } from 'react-icons/md'
+import { ReactNode } from 'react'
 import { ContactButtonContainer } from './styles'
 
-interface ContactButtonProps {
-  text: string
-  variant?: 'default' | 'light'
+type ButtonTypes = HTMLAnchorElement | HTMLButtonElement
+
+interface ContactButtonProps<T extends ButtonTypes>
+  extends React.AnchorHTMLAttributes<T>,
+    React.ButtonHTMLAttributes<T> {
+  variant?: 'primary' | 'secondary'
+  children: ReactNode
+  as?: 'button' | 'a'
+  type?: 'submit' | 'reset' | 'button'
 }
 
 export function ContactButton({
-  text,
-  variant = 'default',
-}: ContactButtonProps) {
+  variant = 'primary',
+  children,
+  as = 'button',
+  type = 'button',
+  ...props
+}: ContactButtonProps<ButtonTypes>) {
   return (
-    <ContactButtonContainer variant={variant}>
-      <span>{text}</span>
-      <MdSend size={24} />
+    <ContactButtonContainer variant={variant} as={as} {...props}>
+      {children}
     </ContactButtonContainer>
   )
 }

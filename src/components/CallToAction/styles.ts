@@ -1,55 +1,57 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-export const CallToActionContainer = styled.section`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 3rem;
+export const CallToActionContainer = styled('section', {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: '3rem',
 
-  margin: 8rem 0;
-  padding: 2.5rem 3rem;
+  margin: '8rem 0',
+  padding: '2.5rem 3rem',
 
-  border-radius: 1.25rem;
+  borderRadius: '1.25rem',
 
-  background-color: ${({ theme }) => theme.colors.secondary};
+  backgroundColor: '$green500',
 
-  button {
-    display: flex;
-    min-width: 243px;
-  }
+  button: {
+    display: 'flex',
+    minWidth: 243,
+  },
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  '@bp1': {
+    flexDirection: 'column',
 
-    button {
-      align-self: stretch;
-    }
-  }
+    button: {
+      alignSelf: 'stretch',
+    },
+  },
 
-  @media (max-width: 480px) {
-    padding: 1.5rem 2rem;
+  '@bp3': {
+    padding: '1.5rem 2rem',
 
-    button {
-      padding: 1rem 0.5rem;
-      min-width: 100%;
-    }
-  }
-`
+    button: {
+      padding: '1rem 0.5rem',
+      minWidth: '100%',
+    },
+  },
+})
 
-export const CallToActionContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+export const CallToActionContent = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.75rem',
 
-  h1 {
-    font-size: 2rem;
-  }
+  h1: {
+    color: '$white',
+    fontSize: '$2xl',
+  },
 
-  p {
-    font-size: 1.25rem;
-  }
+  p: {
+    color: '$white',
+    fontSize: '$lg',
+  },
 
-  @media (max-width: 480px) {
-    gap: 1.5rem;
-  }
-`
+  '@bp3': {
+    gap: '1.5rem',
+  },
+})

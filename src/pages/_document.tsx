@@ -1,6 +1,7 @@
 import { Favicon } from 'components/Head/Favicon'
 import { Seo } from 'components/Head/Seo'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { getCssText } from 'styles/themes/default'
 
 export default class MyDocument extends Document {
   render() {
@@ -25,6 +26,11 @@ export default class MyDocument extends Document {
           />
 
           <Favicon />
+
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
         </Head>
         <body>
           <Main />

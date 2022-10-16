@@ -1,62 +1,63 @@
-import styled from 'styled-components'
+import { styled } from 'styles/themes/default'
 
-export const ServicesInfoItemsContainer = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: start;
+export const ServicesInfoItemsContainer = styled('section', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'start',
 
-  gap: 2rem;
+  gap: '2rem',
 
-  @media (max-width: 768px) {
-    align-items: start;
-    flex-direction: column;
-  }
-`
-export const ServiceInfoItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
+  '@bp1': {
+    alignItems: 'start',
+    flexDirection: 'column',
+  },
+})
 
-  h1 {
-    font-size: 2.25rem;
-  }
+export const ServiceInfoItem = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  gap: '0.5rem',
 
-  p {
-    font-size: 1.125rem;
-  }
+  h1: {
+    fontSize: '$2xl',
+  },
 
-  &:first-child {
-    padding-right: 2rem;
-    border-right: 1px solid ${({ theme }) => theme.colors.secondary};
-  }
+  p: {
+    fontSize: '$md',
+  },
 
-  @media (max-width: 768px) {
-    &:first-child {
-      padding-right: 0;
-      border-right: none;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
-    }
-  }
-`
+  '&:first-child': {
+    paddingRight: '2rem',
+    borderRight: '1px solid $green500',
+  },
 
-export const ServicesSquareImageContainer = styled.div`
-  position: absolute;
-  top: 40rem;
-  left: 0;
-  z-index: -1;
-  opacity: 0.3;
+  '@bp1': {
+    '&:first-child': {
+      paddingRight: 0,
+      borderRight: 'none',
+      paddingBottom: '2rem',
+      borderBottom: '1px solid $green500',
+    },
+  },
+})
 
-  @media (max-width: 576px) {
-    img {
-      width: 300px;
-    }
-  }
+export const ServicesSquareImageContainer = styled('div', {
+  position: 'absolute',
+  top: '40rem',
+  left: 0,
+  zIndex: -1,
+  opacity: 0.3,
 
-  @media (max-width: 360px) {
-    img {
-      width: 250px;
-    }
-  }
-`
+  '@bp2': {
+    img: {
+      width: 300,
+    },
+  },
+
+  '@media (max-width: 360px)': {
+    img: {
+      width: 250,
+    },
+  },
+})
