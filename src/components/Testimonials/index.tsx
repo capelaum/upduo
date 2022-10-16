@@ -1,9 +1,8 @@
 import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
 import { useEffect, useState } from 'react'
+import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 import { testimonials } from './data'
-
-import 'keen-slider/keen-slider.min.css'
 
 import {
   Description,
@@ -15,13 +14,16 @@ import {
 } from './styles'
 
 import lead_line from 'assets/lead_line.svg'
-import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
+import { KeenSliderInstance } from 'keen-slider'
 
 interface TestimonialsProps {
   id?: string
 }
 
 export function Testimonials({ id }: TestimonialsProps) {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  console.log('🚀 ~ currentSlide', currentSlide)
+  const [loaded, setLoaded] = useState(false)
   const [options, setOptions] = useState({})
   const [sliderRef, slider] = useKeenSlider(options)
 
@@ -48,6 +50,12 @@ export function Testimonials({ id }: TestimonialsProps) {
           },
         },
       },
+      slideChanged(slider: KeenSliderInstance) {
+        setCurrentSlide(slider.track.details.rel)
+      },
+      created() {
+        setLoaded(true)
+      },
     })
   }, [])
 
@@ -65,11 +73,9 @@ export function Testimonials({ id }: TestimonialsProps) {
       </Description>
 
       <SliderContainer>
-        {slider.current && (
-          <SliderArrow onClick={() => slider.current?.prev()}>
-            <TbChevronLeft size={48} color="#fff" />
-          </SliderArrow>
-        )}
+        <SliderArrow onClick={() => slider.current?.prev()}>
+          <TbChevronLeft size={48} color="#fff" />
+        </SliderArrow>
 
         <SlidesContainer ref={sliderRef} className="keen-slider">
           {testimonials.map((testimonial, index) => (
@@ -86,11 +92,9 @@ export function Testimonials({ id }: TestimonialsProps) {
           ))}
         </SlidesContainer>
 
-        {slider.current && (
-          <SliderArrow onClick={() => slider.current?.next()}>
-            <TbChevronRight size={48} color="#fff" />
-          </SliderArrow>
-        )}
+        <SliderArrow onClick={() => slider.current?.next()}>
+          <TbChevronRight size={48} color="#fff" />
+        </SliderArrow>
       </SliderContainer>
     </TestimonialsContainer>
   )
