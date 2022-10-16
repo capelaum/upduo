@@ -38,7 +38,7 @@ export const SolutionsContent = styled('div', {
   gap: '2rem',
 
   h1: {
-    fontSize: '$22xl',
+    fontSize: '$2xl',
   },
 
   p: {

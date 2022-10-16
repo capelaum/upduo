@@ -9,6 +9,7 @@ import {
 import hero from 'assets/hero.svg'
 import hero_square from 'assets/hero_square.svg'
 import { ContactButton } from 'components/ContactButton'
+import { MdSend } from 'react-icons/md'
 
 export function Hero() {
   return (
@@ -22,7 +23,17 @@ export function Hero() {
 
         <p>Design e Estratégias de marketing para escalar seu negócio!</p>
 
-        <ContactButton text="Fale conosco" />
+        <ContactButton
+          as="a"
+          href="https://wa.me/5561992319872"
+          target="_blank"
+          rel="noreferrer noopener nofollow"
+        >
+          <>
+            <span>Fale conosco</span>
+            <MdSend size={24} />
+          </>
+        </ContactButton>
       </HeroCallToAction>
 
       <HeroImageContainer>

@@ -1,4 +1,5 @@
 import { ContactButton } from 'components/ContactButton'
+import { BsWhatsapp } from 'react-icons/bs'
 import { CallToActionContainer, CallToActionContent } from './styles'
 
 export function CallToAction() {
@@ -10,7 +11,18 @@ export function CallToAction() {
         <p>Entre em contato e vamos tornar o seu projeto possível.</p>
       </CallToActionContent>
 
-      <ContactButton text="Fale conosco" variant="secondary" />
+      <ContactButton
+        variant="secondary"
+        as="a"
+        href="https://wa.me/5561992319872"
+        target="_blank"
+        rel="noreferrer noopener nofollow"
+      >
+        <>
+          <span>Fale conosco</span>
+          <BsWhatsapp size={24} />
+        </>
+      </ContactButton>
     </CallToActionContainer>
   )
 }

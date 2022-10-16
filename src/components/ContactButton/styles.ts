@@ -13,6 +13,8 @@ export const ContactButtonContainer = styled('button', {
 
   transition: 'all 0.2s ease-in-out',
 
+  textDecoration: 'none',
+
   variants: {
     variant: {
       primary: {

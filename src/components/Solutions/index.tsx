@@ -1,12 +1,12 @@
+import solutions from 'assets/solutions.svg'
+import { ContactButton } from 'components/ContactButton'
 import Image from 'next/future/image'
+import { MdOutlineMail } from 'react-icons/md'
 import {
   SolutionsContainer,
   SolutionsContent,
   SolutionsImageContainer,
 } from './styles'
-
-import solutions from 'assets/solutions.svg'
-import { ContactButton } from 'components/ContactButton'
 
 export function Solutions() {
   return (
@@ -26,7 +26,17 @@ export function Solutions() {
           digital.
         </p>
 
-        <ContactButton text="Saiba mais" />
+        <ContactButton
+          as="a"
+          href="mailto:contato.upduo@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <>
+            <span>Entre em contato</span>
+            <MdOutlineMail size={24} />
+          </>
+        </ContactButton>
       </SolutionsContent>
     </SolutionsContainer>
   )

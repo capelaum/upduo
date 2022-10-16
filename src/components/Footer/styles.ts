@@ -7,6 +7,7 @@ export const FooterContainer = styled('footer', {
 
   width: '100%',
   position: 'relative',
+  paddingBottom: '1.25rem',
 
   '@bp2': {
     flexDirection: 'column',
@@ -48,7 +49,7 @@ export const UpduoContainer = styled('div', {
   },
 
   '@bp2': {
-    alignIItems: 'center',
+    alignItems: 'center',
     gap: '1rem',
 
     span: {

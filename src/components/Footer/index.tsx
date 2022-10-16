@@ -12,6 +12,7 @@ import {
 
 import footer_square from 'assets/footer_square.svg'
 import upduo_logo_white from 'assets/upduo_logo_white.svg'
+import { MdOutlineMail } from 'react-icons/md'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -38,17 +39,25 @@ export function Footer() {
       <SocialContainer>
         <SocialLinks>
           <SocialLink
+            href="mailto:contato.upduo@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <MdOutlineMail size={32} />
+          </SocialLink>
+
+          <SocialLink
             href="https://wa.me/5561992319872"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
           >
-            <BsWhatsapp size={28} />
+            <BsWhatsapp size={26} />
           </SocialLink>
 
           <SocialLink
             href="https://www.instagram.com/upduocomunicacao"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
           >
             <BsInstagram size={28} />
           </SocialLink>
@@ -56,7 +65,7 @@ export function Footer() {
           <SocialLink
             href="https://www.behance.net/sabrinecruz"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
           >
             <BsBehance size={32} />
           </SocialLink>
@@ -67,7 +76,7 @@ export function Footer() {
           <a
             href="https://github.com/capelaum"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
           >
             Luís Vinicius Capelletto
           </a>
