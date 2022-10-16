@@ -5,7 +5,7 @@ export const ServicesContainer = styled('section', {
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: '4rem',
-  marginBottom: '5rem',
+  marginBottom: '8rem',
 
   '@media (max-width: 1200px)': {
     gap: '2rem',
@@ -34,6 +34,8 @@ export const ServicesImageContainer = styled('div', {
   justifyContent: 'center',
 
   flex: '50%',
+
+  background: 'radial-gradient(circle, #2AB793 0%, #0e2d3e 60%)',
 
   img: {
     width: '100%',

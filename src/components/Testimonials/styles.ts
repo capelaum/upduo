@@ -37,16 +37,19 @@ export const SliderContainer = styled('div', {
   width: '100%',
   height: '100%',
 
-  position: 'relative',
+  // position: 'relative',
 
   display: 'flex',
-  alignIItems: 'center',
+  alignItems: 'center',
   justifyContent: 'space-between',
 
   cursor: 'grab',
 })
 
-export const SlidesContainer = styled('div', {})
+export const SlidesContainer = styled('div', {
+  maxWidth: '100%',
+  // border: '1px solid red',
+})
 
 export const SlideItem = styled('div', {
   display: 'flex',
@@ -85,9 +88,7 @@ export const SlideItem = styled('div', {
 export const SliderArrow = styled('button', {
   zIndex: 2,
 
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  border: '1px solid red',
 
   background: 'transparent',
 

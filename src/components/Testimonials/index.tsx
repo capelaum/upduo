@@ -1,7 +1,6 @@
 import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
 import { useState } from 'react'
-import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 import { testimonials } from './data'
 
 import 'keen-slider/keen-slider.min.css'
@@ -9,7 +8,6 @@ import 'keen-slider/keen-slider.min.css'
 import {
   Description,
   SlideItem,
-  SliderArrow,
   SliderContainer,
   SlidesContainer,
   TestimonialsContainer,
@@ -68,7 +66,7 @@ export function Testimonials({ id }: TestimonialsProps) {
       </Description>
 
       <SliderContainer>
-        {loaded && instanceRef.current && (
+        {/* {loaded && instanceRef.current && (
           <SliderArrow
             onClick={(e: any) =>
               e.stopPropagation() || instanceRef.current?.prev()
@@ -76,7 +74,7 @@ export function Testimonials({ id }: TestimonialsProps) {
           >
             <TbChevronLeft size={48} color="#fff" />
           </SliderArrow>
-        )}
+        )} */}
 
         <SlidesContainer ref={sliderRef} className="keen-slider">
           {testimonials.map((testimonial, index) => (
@@ -90,7 +88,7 @@ export function Testimonials({ id }: TestimonialsProps) {
           ))}
         </SlidesContainer>
 
-        {loaded && instanceRef.current && (
+        {/* {loaded && instanceRef.current && (
           <SliderArrow
             onClick={(e: any) =>
               e.stopPropagation() || instanceRef.current?.next()
@@ -98,7 +96,7 @@ export function Testimonials({ id }: TestimonialsProps) {
           >
             <TbChevronRight size={48} color="#fff" />
           </SliderArrow>
-        )}
+        )} */}
       </SliderContainer>
     </TestimonialsContainer>
   )
