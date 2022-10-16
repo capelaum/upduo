@@ -1,6 +1,6 @@
-import { useKeenSlider } from 'keen-slider/react'
+import { KeenSliderInstance, useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { testimonials } from './data'
 
 import 'keen-slider/keen-slider.min.css'
@@ -10,6 +10,7 @@ import {
   SlideItem,
   SliderArrow,
   SliderContainer,
+  SlidesContainer,
   TestimonialsContainer,
 } from './styles'
 
@@ -22,52 +23,49 @@ interface TestimonialsProps {
 
 export function Testimonials({ id }: TestimonialsProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [loaded, setLoaded] = useState(false)
+  const [options, setOptions] = useState({})
   const [numberOfSliderPerView, setNumberOfSlidesPerView] = useState(0)
+  const [sliderRef, slider] = useKeenSlider(options)
 
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    // loop: true,
-    mode: 'snap',
-    slides: {
-      perView: 3,
-      spacing: 20,
-    },
-    breakpoints: {
-      '(max-width: 1200px)': {
-        slides: {
-          perView: 2,
-          spacing: 20,
+  useEffect(() => {
+    setOptions({
+      slidesPerView: 3,
+      mode: 'free-snap',
+      centered: true,
+      loop: true,
+      initial: 0,
+      slides: {
+        perView: 3,
+        spacing: 20,
+      },
+      breakpoints: {
+        '(max-width: 1200px)': {
+          slides: {
+            perView: 2,
+            spacing: 20,
+          },
+        },
+        '(max-width: 768px)': {
+          slides: {
+            perView: 1,
+            spacing: 16,
+          },
         },
       },
-      '(max-width: 768px)': {
-        slides: {
-          perView: 1,
-          spacing: 16,
-        },
+      slideChanged(slider: KeenSliderInstance) {
+        setCurrentSlide(slider.track.details.rel)
       },
-    },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
-    },
-    created(slider) {
-      setLoaded(true)
-      console.log(slider)
-      setNumberOfSlidesPerView(
-        (
-          slider.options.slides as {
-            perView: number
-          }
-        ).perView
-      )
-    },
-  })
-
-  // if (instanceRef.current) {
-  //   console.log('🚀 ~ instanceRef.current', instanceRef.current)
-
-  //   console.log('🚀 ~ currentSlide', currentSlide)
-  // }
+      created(slider: KeenSliderInstance) {
+        setNumberOfSlidesPerView(
+          (
+            slider.options.slides as {
+              perView: number
+            }
+          ).perView
+        )
+      },
+    })
+  }, [])
 
   return (
     <TestimonialsContainer id={id}>
@@ -82,43 +80,40 @@ export function Testimonials({ id }: TestimonialsProps) {
         Confira o que alguns de nossos clientes tem a dizer.
       </Description>
 
-      <SliderContainer ref={sliderRef} className="keen-slider">
-        {loaded && instanceRef.current && (
+      <SliderContainer>
+        {slider.current && (
           <SliderArrow
-            direction="left"
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.prev()
-            }
-            disabled={currentSlide === 0}
+            // direction="left"
+            onClick={(e: any) => e.stopPropagation() || slider.current?.prev()}
+            // disabled={currentSlide === 0}
           >
             <TbChevronLeft size={48} color="#fff" />
           </SliderArrow>
         )}
 
-        {testimonials.map((testimonial, index) => (
-          <SlideItem
-            key={index}
-            className={`keen-slider__slide number-slide${index}`}
-          >
-            <Image src={testimonial.img} alt={testimonial.name} />
+        <SlidesContainer ref={sliderRef} className="keen-slider">
+          {testimonials.map((testimonial, index) => (
+            <SlideItem
+              key={index}
+              className={`keen-slider__slide number-slide${index}`}
+            >
+              <Image src={testimonial.img} alt={testimonial.name} />
 
-            <h2>{testimonial.name}</h2>
+              <h2>{testimonial.name}</h2>
 
-            <p>{testimonial.comment}</p>
-          </SlideItem>
-        ))}
+              <p>{testimonial.comment}</p>
+            </SlideItem>
+          ))}
+        </SlidesContainer>
 
-        {loaded && instanceRef.current && (
+        {slider.current && (
           <SliderArrow
-            direction="right"
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.next()
-            }
-            disabled={
-              currentSlide ===
-              instanceRef.current.track.details.slides.length -
-                numberOfSliderPerView
-            }
+            // direction="right"
+            onClick={(e: any) => e.stopPropagation() || slider.current?.next()}
+            // disabled={
+            //   currentSlide ===
+            //   slider.current.track.details.slides.length - numberOfSliderPerView
+            // }
           >
             <TbChevronRight size={48} color="#fff" />
           </SliderArrow>

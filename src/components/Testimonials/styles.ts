@@ -40,15 +40,17 @@ export const SliderContainer = styled('div', {
   position: 'relative',
 
   display: 'flex',
-  // alignItems: 'center',
-  // justifyContent: 'space-between',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+
+  border: '1px solid yellow',
 
   cursor: 'grab',
 })
 
 export const SlidesContainer = styled('div', {
   maxWidth: '100%',
-  // border: '1px solid red',
+  border: '1px solid red',
 })
 
 export const SlideItem = styled('div', {
@@ -62,6 +64,8 @@ export const SlideItem = styled('div', {
   backgroundColor: '$white',
 
   borderRadius: 20,
+
+  border: '1px solid red',
 
   img: {
     width: 50,
@@ -87,28 +91,21 @@ export const SlideItem = styled('div', {
 
 export const SliderArrow = styled('button', {
   zIndex: 2,
-  position: 'absolute',
-  // top: '50%',
-  // transform: 'translateY(-50%)',
-  top: 0,
-  bottom: 0,
+
+  border: '1px solid red',
+
+  backgroundColor: '$transparent',
 
   variants: {
     direction: {
       left: {
-        left: 0,
-        background:
-          'linear-gradient(90deg, rgba(14,45,62,0.7) 0%, rgba(0,0,0,0) 100%)',
+        left: -24,
       },
       right: {
-        right: 0,
-        background:
-          'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(14,45,62,0.7) 100%)',
+        right: -24,
       },
     },
   },
-
-  // border: '1px solid red',
 
   '&:hover': {
     svg: {
