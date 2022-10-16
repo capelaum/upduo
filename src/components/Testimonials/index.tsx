@@ -52,7 +52,7 @@ export function Testimonials({ id }: TestimonialsProps) {
       },
       slideChanged(slider: KeenSliderInstance) {
         console.log('🚀 ~ slider', slider)
-        setCurrentSlide(slider.track.details.rel)
+        // setCurrentSlide(slider.track.details.rel)
         console.log('🚀 ~ slider.track.details.rel', slider.track.details.rel)
       },
     })
