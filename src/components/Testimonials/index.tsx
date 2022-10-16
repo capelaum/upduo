@@ -9,7 +9,6 @@ import {
   Description,
   SlideItem,
   SliderContainer,
-  SlidesContainer,
   TestimonialsContainer,
 } from './styles'
 
@@ -26,6 +25,7 @@ export function Testimonials({ id }: TestimonialsProps) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     loop: true,
+    mode: 'free-snap',
     slides: {
       perView: 3,
       spacing: 20,
@@ -65,7 +65,7 @@ export function Testimonials({ id }: TestimonialsProps) {
         Confira o que alguns de nossos clientes tem a dizer.
       </Description>
 
-      <SliderContainer>
+      <SliderContainer ref={sliderRef} className="keen-slider">
         {/* {loaded && instanceRef.current && (
           <SliderArrow
             onClick={(e: any) =>
@@ -76,17 +76,15 @@ export function Testimonials({ id }: TestimonialsProps) {
           </SliderArrow>
         )} */}
 
-        <SlidesContainer ref={sliderRef} className="keen-slider">
-          {testimonials.map((testimonial, index) => (
-            <SlideItem key={index} className="keen-slider__slide">
-              <Image src={testimonial.img} alt={testimonial.name} />
+        {testimonials.map((testimonial, index) => (
+          <SlideItem key={index} className="keen-slider__slide">
+            <Image src={testimonial.img} alt={testimonial.name} />
 
-              <h2>{testimonial.name}</h2>
+            <h2>{testimonial.name}</h2>
 
-              <p>{testimonial.comment}</p>
-            </SlideItem>
-          ))}
-        </SlidesContainer>
+            <p>{testimonial.comment}</p>
+          </SlideItem>
+        ))}
 
         {/* {loaded && instanceRef.current && (
           <SliderArrow

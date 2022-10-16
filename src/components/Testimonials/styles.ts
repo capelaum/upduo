@@ -40,7 +40,7 @@ export const SliderContainer = styled('div', {
   // position: 'relative',
 
   display: 'flex',
-  alignItems: 'center',
+  // alignItems: 'center',
   justifyContent: 'space-between',
 
   cursor: 'grab',
