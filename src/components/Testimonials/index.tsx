@@ -31,9 +31,7 @@ export function Testimonials({ id }: TestimonialsProps) {
     setOptions({
       slidesPerView: 3,
       mode: 'free-snap',
-      centered: true,
       loop: true,
-      initial: 0,
       slides: {
         perView: 3,
         spacing: 20,
@@ -53,16 +51,9 @@ export function Testimonials({ id }: TestimonialsProps) {
         },
       },
       slideChanged(slider: KeenSliderInstance) {
+        console.log('🚀 ~ slider', slider)
         setCurrentSlide(slider.track.details.rel)
-      },
-      created(slider: KeenSliderInstance) {
-        setNumberOfSlidesPerView(
-          (
-            slider.options.slides as {
-              perView: number
-            }
-          ).perView
-        )
+        console.log('🚀 ~ slider.track.details.rel', slider.track.details.rel)
       },
     })
   }, [])
@@ -83,9 +74,7 @@ export function Testimonials({ id }: TestimonialsProps) {
       <SliderContainer>
         {slider.current && (
           <SliderArrow
-            // direction="left"
             onClick={(e: any) => e.stopPropagation() || slider.current?.prev()}
-            // disabled={currentSlide === 0}
           >
             <TbChevronLeft size={48} color="#fff" />
           </SliderArrow>
@@ -108,12 +97,7 @@ export function Testimonials({ id }: TestimonialsProps) {
 
         {slider.current && (
           <SliderArrow
-            // direction="right"
             onClick={(e: any) => e.stopPropagation() || slider.current?.next()}
-            // disabled={
-            //   currentSlide ===
-            //   slider.current.track.details.slides.length - numberOfSliderPerView
-            // }
           >
             <TbChevronRight size={48} color="#fff" />
           </SliderArrow>

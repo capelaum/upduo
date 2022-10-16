@@ -43,14 +43,12 @@ export const SliderContainer = styled('div', {
   alignItems: 'center',
   justifyContent: 'space-between',
 
-  border: '1px solid yellow',
-
-  cursor: 'grab',
+  // border: '1px solid yellow',
 })
 
 export const SlidesContainer = styled('div', {
   maxWidth: '100%',
-  border: '1px solid red',
+  cursor: 'grab',
 })
 
 export const SlideItem = styled('div', {
@@ -64,8 +62,6 @@ export const SlideItem = styled('div', {
   backgroundColor: '$white',
 
   borderRadius: 20,
-
-  border: '1px solid red',
 
   img: {
     width: 50,
@@ -91,8 +87,6 @@ export const SlideItem = styled('div', {
 
 export const SliderArrow = styled('button', {
   zIndex: 2,
-
-  border: '1px solid red',
 
   backgroundColor: '$transparent',
 
