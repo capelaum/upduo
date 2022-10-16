@@ -22,16 +22,14 @@ interface TestimonialsProps {
 }
 
 export function Testimonials({ id }: TestimonialsProps) {
-  const [currentSlide, setCurrentSlide] = useState(0)
   const [options, setOptions] = useState({})
-  const [numberOfSliderPerView, setNumberOfSlidesPerView] = useState(0)
   const [sliderRef, slider] = useKeenSlider(options)
 
   useEffect(() => {
     setOptions({
       slidesPerView: 3,
       mode: 'free-snap',
-      loop: true,
+      // loop: true,
       slides: {
         perView: 3,
         spacing: 20,
