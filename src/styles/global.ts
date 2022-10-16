@@ -9,10 +9,6 @@ export const globalStyles = globalCss({
   html: {
     scrollBehavior: 'smooth',
     scrollPaddingTop: '8rem',
-
-    '@bp1': {
-      scrollPaddingTop: '12rem',
-    },
   },
 
   body: {
