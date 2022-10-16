@@ -17,6 +17,7 @@ export function CallToAction() {
         href="https://wa.me/5561992319872"
         target="_blank"
         rel="noreferrer noopener nofollow"
+        title="WhatsApp da UpDuo"
       >
         <>
           <span>Fale conosco</span>

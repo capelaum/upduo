@@ -42,6 +42,7 @@ export function Footer() {
             href="mailto:contato.upduo@gmail.com"
             target="_blank"
             rel="noopener noreferrer nofollow"
+            title="Enviar e-mail para UpDuo"
           >
             <MdOutlineMail size={32} />
           </SocialLink>
@@ -50,6 +51,7 @@ export function Footer() {
             href="https://wa.me/5561992319872"
             target="_blank"
             rel="noopener noreferrer nofollow"
+            title="WhatsApp da UpDuo"
           >
             <BsWhatsapp size={26} />
           </SocialLink>
@@ -58,6 +60,7 @@ export function Footer() {
             href="https://www.instagram.com/upduocomunicacao"
             target="_blank"
             rel="noopener noreferrer nofollow"
+            title="Ver Instagram da UpDuo"
           >
             <BsInstagram size={28} />
           </SocialLink>
@@ -66,6 +69,7 @@ export function Footer() {
             href="https://www.behance.net/sabrinecruz"
             target="_blank"
             rel="noopener noreferrer nofollow"
+            title="Ver Behance da UpDuo"
           >
             <BsBehance size={32} />
           </SocialLink>

@@ -28,6 +28,14 @@ export const HeaderContent = styled('div', {
   justifyContent: 'space-between',
   gap: '2rem',
 
+  img: {
+    cursor: 'pointer',
+
+    '&:hover': {
+      filter: 'brightness(0.95)',
+    },
+  },
+
   nav: {
     display: 'flex',
     alignItems: 'center',

@@ -31,6 +31,7 @@ export function Solutions() {
           href="mailto:contato.upduo@gmail.com"
           target="_blank"
           rel="noopener noreferrer nofollow"
+          title="Enviar e-mail para UpDuo"
         >
           <>
             <span>Entre em contato</span>
