@@ -52,7 +52,7 @@ export function Testimonials({ id }: TestimonialsProps) {
       },
       slideChanged(slider: KeenSliderInstance) {
         console.log('🚀 ~ slider', slider)
-        // setCurrentSlide(slider.track.details.rel)
+        setCurrentSlide(slider.track.details.rel)
         console.log('🚀 ~ slider.track.details.rel', slider.track.details.rel)
       },
     })
@@ -76,7 +76,7 @@ export function Testimonials({ id }: TestimonialsProps) {
           <SliderArrow
             onClick={(e: any) => {
               e.stopPropagation()
-              slider.current?.prev()
+              slider.current?.moveToIdx(currentSlide + 1)
             }}
           >
             <TbChevronLeft size={48} color="#fff" />
@@ -101,8 +101,7 @@ export function Testimonials({ id }: TestimonialsProps) {
         {slider.current && (
           <SliderArrow
             onClick={(e: any) => {
-              e.stopPropagation()
-              slider.current?.next()
+              slider.current?.moveToIdx(currentSlide + 1)
             }}
           >
             <TbChevronRight size={48} color="#fff" />
