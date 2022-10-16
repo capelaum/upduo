@@ -1,3 +1,5 @@
+import { Favicon } from 'components/Head/Favicon'
+import { Seo } from 'components/Head/Seo'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
@@ -16,31 +18,13 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="favicon/apple-touch-icon.png"
+          <Favicon />
+
+          <Seo
+            title="UpDuos Comunicação"
+            url="https://upduo.vercel.app"
+            description="Design e Estratégias de marketing para escalar seu negócio!"
           />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="favicon/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="favicon/favicon-16x16.png"
-          />
-          <link rel="manifest" href="favicon/site.webmanifest" />
-          <link
-            rel="mask-icon"
-            href="favicon/safari-pinned-tab.svg"
-            color="#0e2d3e"
-          />
-          <meta name="msapplication-TileColor" content="#0e2d3e" />
-          <meta name="theme-color" content="#0e2d3e" />
         </Head>
         <body>
           <Main />

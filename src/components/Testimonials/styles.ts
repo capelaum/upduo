@@ -46,23 +46,17 @@ export const SliderContainer = styled.div`
   cursor: grab;
 `
 
-export const SlidesContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-`
+export const SlidesContainer = styled.div``
 
 export const SlideItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  height: 100%;
+  justify-content: start;
 
   padding: 1.25rem;
 
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: #fff;
 
   img {
     width: 50px;
@@ -89,18 +83,17 @@ export const SlideItem = styled.div`
 `
 
 export const SliderArrow = styled.button`
-  height: 100%;
   z-index: 2;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: transparent;
+  background: transparent;
 
   &:hover {
     svg {
-      transition: all 0.3s ease-in-out;
+      transition: all 0.2s ease-in-out;
       stroke: ${({ theme }) => theme.colors.secondary};
     }
   }

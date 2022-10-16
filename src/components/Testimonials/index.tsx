@@ -1,3 +1,4 @@
+import { KeenSliderInstance } from 'keen-slider'
 import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
 import { useState } from 'react'
@@ -11,8 +12,6 @@ import {
   SlidesContainer,
   TestimonialsContainer,
 } from './styles'
-
-import 'keen-slider/keen-slider.min.css'
 
 import lead_line from 'assets/lead_line.svg'
 import isa from 'assets/testimonials/isa.png'
@@ -58,6 +57,39 @@ const testimonials = [
   },
 ]
 
+const sliderAutoPlay = (slider: KeenSliderInstance) => {
+  let timeout: any
+  let mouseOver = false
+
+  function clearNextTimeout() {
+    clearTimeout(timeout)
+  }
+
+  function nextTimeout() {
+    clearTimeout(timeout)
+
+    if (mouseOver) return
+
+    timeout = setTimeout(() => {
+      slider.next()
+    }, 2000)
+  }
+  slider.on('created', () => {
+    slider.container.addEventListener('mouseover', () => {
+      mouseOver = true
+      clearNextTimeout()
+    })
+    slider.container.addEventListener('mouseout', () => {
+      mouseOver = false
+      nextTimeout()
+    })
+    nextTimeout()
+  })
+  slider.on('dragStarted', clearNextTimeout)
+  slider.on('animationEnded', nextTimeout)
+  slider.on('updated', nextTimeout)
+}
+
 interface TestimonialsProps {
   id?: string
 }
@@ -66,34 +98,34 @@ export function Testimonials({ id }: TestimonialsProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
 
-  const [sliderRef, instanceRef] = useKeenSlider({
-    initial: 0,
-    loop: true,
-    slides: {
-      perView: 3,
-      spacing: 16,
-    },
-    breakpoints: {
-      '(max-width: 1200px)': {
-        slides: {
-          perView: 2,
-          spacing: 24,
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      initial: 0,
+      loop: true,
+      renderMode: 'performance',
+      slides: {
+        perView: 3,
+        spacing: 20,
+        origin: 'center',
+        number: testimonials.length,
+      },
+      breakpoints: {
+        '(max-width: 1200px)': {
+          slides: {
+            perView: 2,
+            spacing: 20,
+          },
+        },
+        '(max-width: 768px)': {
+          slides: {
+            perView: 1,
+            spacing: 16,
+          },
         },
       },
-      '(max-width: 768px)': {
-        slides: {
-          perView: 1,
-          spacing: 16,
-        },
-      },
     },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
-    },
-    created() {
-      setLoaded(true)
-    },
-  })
+    [(slider) => sliderAutoPlay(slider)]
+  )
 
   return (
     <TestimonialsContainer id={id}>
@@ -109,7 +141,7 @@ export function Testimonials({ id }: TestimonialsProps) {
       </Description>
 
       <SliderContainer>
-        <SliderArrow onClick={(e) => instanceRef.current?.prev()}>
+        <SliderArrow onClick={() => instanceRef.current?.prev()}>
           <TbChevronLeft size={48} color="#fff" />
         </SliderArrow>
 
@@ -125,11 +157,9 @@ export function Testimonials({ id }: TestimonialsProps) {
           ))}
         </SlidesContainer>
 
-        {loaded && instanceRef.current && (
-          <SliderArrow onClick={(e) => instanceRef.current?.next()}>
-            <TbChevronRight size={48} color="#fff" />
-          </SliderArrow>
-        )}
+        <SliderArrow onClick={() => instanceRef.current?.next()}>
+          <TbChevronRight size={48} color="#fff" />
+        </SliderArrow>
       </SliderContainer>
     </TestimonialsContainer>
   )
