@@ -1,4 +1,4 @@
-import { styled } from 'styles/themes/default'
+import { styled } from 'styles/stiches.config'
 
 export const SolutionsContainer = styled('section', {
   margin: '8rem 0',

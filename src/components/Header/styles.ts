@@ -1,4 +1,4 @@
-import { styled } from 'styles/themes/default'
+import { styled } from 'styles/stiches.config'
 
 export const HeaderContainer = styled('header', {
   width: '100%',

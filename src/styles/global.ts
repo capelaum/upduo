@@ -1,4 +1,4 @@
-import { globalCss } from './themes/default'
+import { globalCss } from './stiches.config'
 
 export const globalStyles = globalCss({
   '*': {

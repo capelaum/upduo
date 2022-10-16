@@ -1,5 +1,5 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { keyframes, styled } from 'styles/themes/default'
+import { keyframes, styled } from 'styles/stiches.config'
 
 export const IconButton = styled('button', {
   all: 'unset',

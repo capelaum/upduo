@@ -1,7 +1,7 @@
 import { Favicon } from 'components/Head/Favicon'
 import { Seo } from 'components/Head/Seo'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
-import { getCssText } from 'styles/themes/default'
+import { getCssText } from 'styles/stiches.config'
 
 export default class MyDocument extends Document {
   render() {
