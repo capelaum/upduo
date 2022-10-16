@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
           />
 
           <Seo
-            title="UpDuos Comunicação"
+            title="UpDuo Comunicação"
             url="https://upduo.vercel.app"
             description="Design e Estratégias de marketing para escalar seu negócio!"
           />
