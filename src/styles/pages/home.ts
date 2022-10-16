@@ -13,9 +13,5 @@ export const HomeContent = styled('main', {
   width: '100%',
 
   padding: '0 1.25rem',
-  marginTop: '10rem',
-
-  '@bp2': {
-    marginTop: '14rem',
-  },
+  marginTop: '12rem',
 })

@@ -54,7 +54,7 @@ export const HeroCallToAction = styled('div', {
     p: {
       fontSize: '$md',
       textAlign: 'center',
-      marginBottom: '3.5rem',
+      marginBottom: '2.5rem',
     },
   },
 })

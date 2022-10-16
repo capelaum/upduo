@@ -28,8 +28,8 @@ export function Testimonials({ id }: TestimonialsProps) {
   useEffect(() => {
     setOptions({
       slidesPerView: 3,
-      mode: 'free-snap',
-      // loop: true,
+      mode: 'free',
+      loop: true,
       slides: {
         perView: 3,
         spacing: 20,

@@ -46,13 +46,9 @@ export const HeaderContent = styled('div', {
   },
 
   '@bp2': {
-    flexDirection: 'column',
-    padding: '2rem 1.25rem',
-  },
-
-  '@bp3': {
-    'nav a': {
-      fontSize: '$sm',
+    padding: '0.5rem 1.5rem',
+    nav: {
+      display: 'none',
     },
   },
 })

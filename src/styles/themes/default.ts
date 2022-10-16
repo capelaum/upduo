@@ -17,6 +17,7 @@ export const {
 
       green500: '#239172',
       green200: '#2AB793',
+      green100: '#45D0B2',
       blue700: '#12264E',
       blue500: '#0E2D3E',
 
