@@ -1,4 +1,4 @@
-import { KeenSliderInstance, useKeenSlider } from 'keen-slider/react'
+import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
 import { useEffect, useState } from 'react'
 import { testimonials } from './data'
@@ -50,11 +50,6 @@ export function Testimonials({ id }: TestimonialsProps) {
           },
         },
       },
-      slideChanged(slider: KeenSliderInstance) {
-        console.log('🚀 ~ slider', slider)
-        setCurrentSlide(slider.track.details.rel)
-        console.log('🚀 ~ slider.track.details.rel', slider.track.details.rel)
-      },
     })
   }, [])
 
@@ -73,12 +68,7 @@ export function Testimonials({ id }: TestimonialsProps) {
 
       <SliderContainer>
         {slider.current && (
-          <SliderArrow
-            onClick={(e: any) => {
-              e.stopPropagation()
-              slider.current?.moveToIdx(currentSlide + 1)
-            }}
-          >
+          <SliderArrow onClick={() => slider.current?.prev()}>
             <TbChevronLeft size={48} color="#fff" />
           </SliderArrow>
         )}
@@ -99,11 +89,7 @@ export function Testimonials({ id }: TestimonialsProps) {
         </SlidesContainer>
 
         {slider.current && (
-          <SliderArrow
-            onClick={(e: any) => {
-              slider.current?.moveToIdx(currentSlide + 1)
-            }}
-          >
+          <SliderArrow onClick={() => slider.current?.next()}>
             <TbChevronRight size={48} color="#fff" />
           </SliderArrow>
         )}
