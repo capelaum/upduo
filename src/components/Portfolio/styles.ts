@@ -34,13 +34,9 @@ export const ProjectItem = styled('div', {
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: '3rem',
-
   width: '100%',
-
   padding: '1.5rem 1.25rem',
-
   borderRadius: '1.25rem',
-
   backgroundColor: '$white',
 
   img: {

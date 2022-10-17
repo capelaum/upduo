@@ -7,12 +7,19 @@ import { Services } from 'components/Services'
 import { ServicesInfoItems } from 'components/ServicesInfoItems'
 import { Solutions } from 'components/Solutions'
 import { Testimonials } from 'components/Testimonials'
-import 'keen-slider/keen-slider.min.css'
-import type { NextPage } from 'next'
+import { DatoCmsRequest } from 'graphql/datocms'
+import { GET_HOME } from 'graphql/queries/getHome'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { HomeContainer, HomeContent } from 'styles/pages/home'
+import { Project, Testimonial } from 'types/home'
 
-const Home: NextPage = () => {
+interface HomeProps {
+  allTestimonials: Testimonial[]
+  homeProjects: Project[]
+}
+
+export default function Home({ allTestimonials, homeProjects }: HomeProps) {
   return (
     <>
       <Head>
@@ -27,8 +34,8 @@ const Home: NextPage = () => {
           <ServicesInfoItems />
           <Solutions />
           <Services id="services" />
-          <Testimonials id="testimonials" />
-          <Portfolio id="portfolio" />
+          <Testimonials id="testimonials" testimonials={allTestimonials} />
+          <Portfolio id="portfolio" homeProjects={homeProjects} />
           <CallToAction />
           <Footer />
         </HomeContent>
@@ -37,4 +44,25 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+interface ResponseDataProps {
+  allTestimonials: Testimonial[]
+  allProjects: Project[]
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { allTestimonials, allProjects: homeProjects }: ResponseDataProps =
+    await DatoCmsRequest({
+      query: GET_HOME,
+      variables: {
+        first: 3,
+      },
+    })
+
+  return {
+    props: {
+      allTestimonials,
+      homeProjects,
+    },
+    revalidate: 60, // 1 minute
+  }
+}
