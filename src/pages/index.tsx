@@ -12,13 +12,14 @@ import { GET_HOME } from 'graphql/queries/getHome'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { HomeContainer, HomeContent } from 'styles/pages/home'
-import { Testimonial } from 'types/home'
+import { Project, Testimonial } from 'types/home'
 
 interface HomeProps {
-  testimonials: Testimonial[]
+  allTestimonials: Testimonial[]
+  homeProjects: Project[]
 }
 
-export default function Home({ testimonials }: HomeProps) {
+export default function Home({ allTestimonials, homeProjects }: HomeProps) {
   return (
     <>
       <Head>
@@ -33,8 +34,8 @@ export default function Home({ testimonials }: HomeProps) {
           <ServicesInfoItems />
           <Solutions />
           <Services id="services" />
-          <Testimonials id="testimonials" testimonials={testimonials} />
-          <Portfolio id="portfolio" />
+          <Testimonials id="testimonials" testimonials={allTestimonials} />
+          <Portfolio id="portfolio" homeProjects={homeProjects} />
           <CallToAction />
           <Footer />
         </HomeContent>
@@ -44,16 +45,23 @@ export default function Home({ testimonials }: HomeProps) {
 }
 
 interface ResponseDataProps {
-  allDepoimentos: Testimonial[]
+  allTestimonials: Testimonial[]
+  allProjects: Project[]
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { allDepoimentos: testimonials }: ResponseDataProps =
-    await DatoCmsRequest({ query: GET_HOME })
+  const { allTestimonials, allProjects: homeProjects }: ResponseDataProps =
+    await DatoCmsRequest({
+      query: GET_HOME,
+      variables: {
+        first: 3,
+      },
+    })
 
   return {
     props: {
-      testimonials,
+      allTestimonials,
+      homeProjects,
     },
     revalidate: 60, // 1 minute
   }

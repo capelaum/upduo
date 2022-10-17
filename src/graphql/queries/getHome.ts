@@ -2,14 +2,28 @@ import { gql } from 'graphql-request'
 
 export const GET_HOME = gql`
   query {
-    allDepoimentos {
+    allTestimonials {
       id
-      autor
-      conteudo
-      foto {
+      author
+      content
+      photo {
         id
         url
         alt
+      }
+    }
+
+    allProjects {
+      id
+      title
+      shortDescription
+      link
+      cover {
+        id
+        url
+        alt
+        width
+        height
       }
     }
   }

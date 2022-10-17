@@ -74,13 +74,13 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
         {testimonials.map((testimonial) => (
           <SlideItem key={testimonial.id} className="keen-slider__slide">
             <Image
-              src={testimonial.foto.url}
+              src={testimonial.photo.url}
               width={50}
               height={50}
-              alt={testimonial.foto.alt}
+              alt={testimonial.photo.alt}
             />
-            <h2>{testimonial.autor}</h2>
-            <p>{testimonial.conteudo}</p>
+            <h2>{testimonial.author}</h2>
+            <p>{testimonial.content}</p>
           </SlideItem>
         ))}
       </SliderContainer>
