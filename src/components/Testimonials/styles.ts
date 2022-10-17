@@ -1,3 +1,4 @@
+import Slider from 'react-slick'
 import { styled } from 'styles/stiches.config'
 
 export const TestimonialsContainer = styled('section', {
@@ -33,15 +34,108 @@ export const Description = styled('p', {
   maxWidth: '25rem',
 })
 
-export const SliderContainer = styled('div', {
-  maxWidth: 1200,
+export const SliderContainer = styled(Slider, {
   width: '100%',
+  // border: '1px solid red',
+  display: 'flex !important',
+  alignItems: 'center',
 
-  cursor: 'grab',
+  '.slick-loading .slick-slide .slick-loading .slick-track': {
+    visibility: 'hidden',
+  },
+
+  '.slick-track': {
+    border: '1px solid blue',
+    overflow: 'hidden',
+    display: 'flex',
+    gap: '1.25rem',
+    margin: 0,
+    cursor: 'grab',
+
+    '@bp2': {
+      gap: '0.5rem',
+    },
+
+    // '.slick-slide': {
+    //   '&:not(:last-child)': {
+    //     marginRight: '1.25rem',
+    //   },
+    // },
+  },
+
+  '.slick-slide': {
+    div: {
+      display: 'flex !important',
+      flexDirection: 'column',
+      alignItems: 'center !important',
+      justifyContent: 'start',
+    },
+
+    padding: '1.25rem',
+    backgroundColor: '$white',
+    borderRadius: 20,
+
+    img: {
+      objectFit: 'cover',
+      width: 50,
+      height: 50,
+    },
+
+    h2: {
+      marginTop: '0.75rem',
+      marginBottom: '1.5rem',
+      fontSize: '$md',
+      textAlign: 'center',
+      color: '$blue700',
+    },
+
+    p: {
+      fontSize: '$sm',
+      textAlign: 'center',
+      lineHeight: 1.6,
+      fontWeight: 500,
+      color: '$gray600',
+    },
+  },
+
+  '.slick-list': {
+    // border: '1px solid white',
+  },
+
+  '.slick-dots': {
+    listStyle: 'none',
+    display: 'inline-flex !important',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.75rem',
+    marginTop: '2rem !important',
+
+    li: {
+      background: '$white',
+      width: 12,
+      height: 12,
+      borderRadius: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+
+      '&.slick-active': {
+        background: '$blue700',
+      },
+    },
+
+    button: {
+      opacity: 0,
+      width: 12,
+      height: 12,
+      cursor: 'pointer',
+    },
+  },
 })
 
 export const SlideItem = styled('div', {
-  display: 'flex',
+  display: 'flex !important',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'start',
@@ -76,7 +170,7 @@ export const SliderArrowContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  marginTop: '1.5rem',
+  marginTop: '3rem',
   gap: '1rem',
 })
 
