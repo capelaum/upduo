@@ -36,7 +36,6 @@ export const Description = styled('p', {
 
 export const SliderContainer = styled(Slider, {
   width: '100%',
-  // border: '1px solid red',
   display: 'flex !important',
   alignItems: 'center',
 
@@ -45,11 +44,12 @@ export const SliderContainer = styled(Slider, {
   },
 
   '.slick-track': {
-    border: '1px solid blue',
+    // border: '1px solid red',
+
     overflow: 'hidden',
     display: 'flex',
+    justifyContent: 'center',
     gap: '1.25rem',
-    margin: 0,
     cursor: 'grab',
 
     '@bp2': {
