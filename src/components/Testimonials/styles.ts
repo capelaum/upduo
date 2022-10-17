@@ -26,7 +26,7 @@ export const TestimonialsContainer = styled('section', {
 
 export const Description = styled('p', {
   marginTop: '1.25rem',
-  marginBottom: '3rem',
+  marginBottom: '5rem',
   fontSize: '$xl',
   textAlign: 'center',
   fontWeight: 500,

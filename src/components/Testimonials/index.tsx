@@ -1,8 +1,8 @@
+import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
 import { useState } from 'react'
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
-import { testimonials } from './data'
 
 import {
   Description,
@@ -14,12 +14,14 @@ import {
 } from './styles'
 
 import lead_line from 'assets/lead_line.svg'
+import { Testimonial } from 'types/home'
 
 interface TestimonialsProps {
   id?: string
+  testimonials: Testimonial[]
 }
 
-export function Testimonials({ id }: TestimonialsProps) {
+export function Testimonials({ id, testimonials }: TestimonialsProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   // console.log('🚀 ~ currentSlide', currentSlide)
 
@@ -69,11 +71,16 @@ export function Testimonials({ id }: TestimonialsProps) {
       </Description>
 
       <SliderContainer ref={sliderRef} className="keen-slider">
-        {testimonials.map((testimonial, index) => (
-          <SlideItem key={index} className="keen-slider__slide">
-            <Image src={testimonial.img} alt={testimonial.name} />
-            <h2>{testimonial.name}</h2>
-            <p>{testimonial.comment}</p>
+        {testimonials.map((testimonial) => (
+          <SlideItem key={testimonial.id} className="keen-slider__slide">
+            <Image
+              src={testimonial.foto.url}
+              width={50}
+              height={50}
+              alt={testimonial.foto.alt}
+            />
+            <h2>{testimonial.autor}</h2>
+            <p>{testimonial.conteudo}</p>
           </SlideItem>
         ))}
       </SliderContainer>
