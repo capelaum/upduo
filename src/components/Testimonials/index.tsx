@@ -79,11 +79,11 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
       </SliderContainer>
 
       <SliderArrowContainer>
-        <SliderArrow direction="left" onClick={() => slider?.slickNext()}>
+        <SliderArrow direction="left" onClick={() => slider?.slickPrev()}>
           <TbChevronLeft size={48} color="#fff" />
         </SliderArrow>
 
-        <SliderArrow direction="right" onClick={() => slider?.slickPrev()}>
+        <SliderArrow direction="right" onClick={() => slider?.slickNext()}>
           <TbChevronRight size={48} color="#fff" />
         </SliderArrow>
       </SliderArrowContainer>
