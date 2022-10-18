@@ -11,6 +11,7 @@ import { DatoCmsRequest } from 'graphql/datocms'
 import { GET_HOME } from 'graphql/queries/getHome'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { useCallback, useState } from 'react'
 import { HomeContainer, HomeContent } from 'styles/pages/home'
 import { Project, Testimonial } from 'types/home'
 
@@ -20,22 +21,52 @@ interface HomeProps {
 }
 
 export default function Home({ allTestimonials, homeProjects }: HomeProps) {
+  const [isServicesInView, setIsServicesInView] = useState(false)
+  const [isTestimonialsInView, setIsTestimonialsInView] = useState(false)
+  const [isPortfolioInView, setIsPortfolioInView] = useState(false)
+
+  const setServicesInView = useCallback((state: boolean) => {
+    setIsServicesInView(state)
+  }, [])
+
+  const setTestimonialsInView = useCallback((state: boolean) => {
+    setIsTestimonialsInView(state)
+  }, [])
+
+  const setPortfolioInView = useCallback((state: boolean) => {
+    setIsPortfolioInView(state)
+  }, [])
+
   return (
     <>
       <Head>
         <title>UpDuo Comunicação</title>
       </Head>
 
-      <Header />
+      <Header
+        sectionsInView={{
+          isServicesInView,
+          isTestimonialsInView,
+          isPortfolioInView,
+        }}
+      />
 
       <HomeContainer>
         <HomeContent>
           <Hero />
           <ServicesInfoItems />
           <Solutions />
-          <Services id="services" />
-          <Testimonials id="testimonials" testimonials={allTestimonials} />
-          <Portfolio id="portfolio" homeProjects={homeProjects} />
+          <Services id="services" setServicesInView={setServicesInView} />
+          <Testimonials
+            id="testimonials"
+            testimonials={allTestimonials}
+            setTestimonialsInView={setTestimonialsInView}
+          />
+          <Portfolio
+            id="portfolio"
+            homeProjects={homeProjects}
+            setPortfolioInView={setPortfolioInView}
+          />
           <CallToAction />
           <Footer />
         </HomeContent>

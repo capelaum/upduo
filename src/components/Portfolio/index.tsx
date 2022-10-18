@@ -16,15 +16,21 @@ import {
 interface PortfolioProps {
   id?: string
   homeProjects: Project[]
+  setPortfolioInView: (inView: boolean) => void
 }
 
-export function Portfolio({ id, homeProjects }: PortfolioProps) {
+export function Portfolio({
+  id,
+  homeProjects,
+  setPortfolioInView,
+}: PortfolioProps) {
   const { ref, inView } = useInView()
 
   const animation = useAnimation()
 
   useEffect(() => {
     if (inView) {
+      setPortfolioInView(true)
       document.title = 'UpDuo Comunicação - Portfólio'
       animation.start({
         x: 0,
@@ -38,11 +44,12 @@ export function Portfolio({ id, homeProjects }: PortfolioProps) {
     }
 
     if (!inView) {
+      setPortfolioInView(false)
       animation.start({
         x: '-100vw',
       })
     }
-  }, [inView, animation])
+  }, [inView, animation, setPortfolioInView])
 
   return (
     <PortfolioContainer id={id} ref={ref}>

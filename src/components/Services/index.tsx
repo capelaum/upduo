@@ -1,6 +1,8 @@
 import Image from 'next/future/image'
+import { useEffect } from 'react'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 import { TbTarget } from 'react-icons/tb'
+import { useInView } from 'react-intersection-observer'
 import {
   ServiceItem,
   ServiceItemHeader,
@@ -15,11 +17,24 @@ import services from 'assets/services.svg'
 
 interface ServicesProps {
   id?: string
+  setServicesInView: (inView: boolean) => void
 }
 
-export function Services({ id }: ServicesProps) {
+export function Services({ id, setServicesInView }: ServicesProps) {
+  const { ref, inView } = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      setServicesInView(true)
+    }
+
+    if (!inView) {
+      setServicesInView(false)
+    }
+  }, [inView, setServicesInView])
+
   return (
-    <ServicesContainer id={id}>
+    <ServicesContainer id={id} ref={ref}>
       <ServicesContent
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

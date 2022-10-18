@@ -1,12 +1,14 @@
+import { motion } from 'framer-motion'
 import Slider from 'react-slick'
 import { styled } from 'styles/stiches.config'
 
-export const TestimonialsContainer = styled('section', {
+export const TestimonialsContainer = styled(motion.section, {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
 
-  paddingBottom: '8rem',
+  marginTop: '16rem',
+  paddingBottom: '10rem',
 
   background: 'radial-gradient(ellipse, #239172 0%, #0e2d3e 70%)',
 
@@ -17,11 +19,7 @@ export const TestimonialsContainer = styled('section', {
   },
 
   '@bp1': {
-    paddingBottom: '6rem',
-  },
-
-  '@bp3': {
-    paddingBottom: '3rem',
+    marginTop: '8rem',
   },
 })
 

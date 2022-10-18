@@ -6,7 +6,7 @@ export const ServicesContainer = styled('section', {
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: '4rem',
-  marginBottom: '8rem',
+  marginTop: '12rem',
 
   '@media (max-width: 1200px)': {
     gap: '2rem',
@@ -14,6 +14,7 @@ export const ServicesContainer = styled('section', {
 
   '@bp1': {
     flexDirection: 'column-reverse',
+    marginTop: '8rem',
   },
 })
 

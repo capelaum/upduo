@@ -6,20 +6,23 @@ export const PortfolioContainer = styled(motion.section, {
   flexDirection: 'column',
   alignItems: 'center',
 
-  margin: '4rem 0',
-
-  border: '1px solid $gray300',
+  marginTop: '15rem',
 
   h1: {
     fontSize: '$2xl',
     fontWeight: 500,
     marginBottom: '2rem',
   },
+
+  '@bp1': {
+    marginTop: '12rem',
+  },
 })
 
 export const Description = styled('p', {
   marginTop: '1.25rem',
   marginBottom: '5rem',
+
   fontSize: '1.5rem',
   textAlign: 'center',
   fontWeight: 500,
