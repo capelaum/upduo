@@ -1,6 +1,6 @@
 import Image from 'next/future/image'
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
-import Slider, { CustomArrowProps, Settings } from 'react-slick'
+import { CustomArrowProps, Settings } from 'react-slick'
 import { Testimonial } from 'types/home'
 
 import {
@@ -11,7 +11,6 @@ import {
 } from './styles'
 
 import lead_line from 'assets/lead_line.svg'
-import { useRef, useState } from 'react'
 
 interface TestimonialsProps {
   id?: string
@@ -19,16 +18,16 @@ interface TestimonialsProps {
 }
 
 export function Testimonials({ id, testimonials }: TestimonialsProps) {
-  const sliderRef = useRef(null)
-  const [slider, setSlider] = useState<Slider | null>(null)
-
   const sliderSettings: Settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: 'linear',
     initialSlide: 0,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     arrows: false,
 
     responsive: [
@@ -62,7 +61,7 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
         Confira o que alguns de nossos clientes tem a dizer.
       </Description>
 
-      <SliderContainer ref={(slider) => setSlider(slider)} {...sliderSettings}>
+      <SliderContainer {...sliderSettings}>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id}>
             <Image

@@ -6,7 +6,7 @@ export const TestimonialsContainer = styled('section', {
   flexDirection: 'column',
   alignItems: 'center',
 
-  paddingBottom: '12rem',
+  paddingBottom: '8rem',
 
   background: 'radial-gradient(ellipse, #239172 0%, #0e2d3e 70%)',
 
@@ -44,8 +44,6 @@ export const SliderContainer = styled(Slider, {
   },
 
   '.slick-track': {
-    // border: '1px solid red',
-
     overflow: 'hidden',
     display: 'flex',
     justifyContent: 'center',
@@ -55,12 +53,6 @@ export const SliderContainer = styled(Slider, {
     '@bp2': {
       gap: '0.5rem',
     },
-
-    // '.slick-slide': {
-    //   '&:not(:last-child)': {
-    //     marginRight: '1.25rem',
-    //   },
-    // },
   },
 
   '.slick-slide': {
@@ -68,7 +60,7 @@ export const SliderContainer = styled(Slider, {
       display: 'flex !important',
       flexDirection: 'column',
       alignItems: 'center !important',
-      justifyContent: 'start',
+      justifyContent: 'center !important',
     },
 
     padding: '1.25rem',
@@ -100,7 +92,8 @@ export const SliderContainer = styled(Slider, {
   },
 
   '.slick-list': {
-    // border: '1px solid white',
+    marginBottom: '1.125rem !important',
+    height: '100%',
   },
 
   '.slick-dots': {
@@ -109,7 +102,6 @@ export const SliderContainer = styled(Slider, {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '0.75rem',
-    marginTop: '2rem !important',
 
     li: {
       background: '$white',
