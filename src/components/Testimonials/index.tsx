@@ -6,7 +6,6 @@ import { Testimonial } from 'types/home'
 import {
   Description,
   SliderArrow,
-  SliderArrowContainer,
   SliderContainer,
   TestimonialsContainer,
 } from './styles'
@@ -78,7 +77,7 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
         ))}
       </SliderContainer>
 
-      <SliderArrowContainer>
+      {/* <SliderArrowContainer>
         <SliderArrow direction="left" onClick={() => slider?.slickPrev()}>
           <TbChevronLeft size={48} color="#fff" />
         </SliderArrow>
@@ -86,7 +85,7 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
         <SliderArrow direction="right" onClick={() => slider?.slickNext()}>
           <TbChevronRight size={48} color="#fff" />
         </SliderArrow>
-      </SliderArrowContainer>
+      </SliderArrowContainer> */}
     </TestimonialsContainer>
   )
 }

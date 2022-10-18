@@ -3,6 +3,7 @@ import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 import { TbTarget } from 'react-icons/tb'
 import {
   ServiceItem,
+  ServiceItemHeader,
   ServiceItemIconContainer,
   ServiceItemsContainer,
   ServicesContainer,
@@ -28,11 +29,13 @@ export function Services({ id }: ServicesProps) {
 
         <ServiceItemsContainer>
           <ServiceItem>
-            <ServiceItemIconContainer>
-              <IoMdCheckmarkCircleOutline size={24} />
-            </ServiceItemIconContainer>
+            <ServiceItemHeader>
+              <ServiceItemIconContainer>
+                <IoMdCheckmarkCircleOutline size={24} />
+              </ServiceItemIconContainer>
 
-            <h2>Design Gráfico</h2>
+              <h2>Design Gráfico</h2>
+            </ServiceItemHeader>
 
             <p>
               Agregar valor ao produto ou serviço, cada projeto é visto como um
@@ -44,11 +47,13 @@ export function Services({ id }: ServicesProps) {
           </ServiceItem>
 
           <ServiceItem>
-            <ServiceItemIconContainer>
-              <TbTarget size={24} />
-            </ServiceItemIconContainer>
+            <ServiceItemHeader>
+              <ServiceItemIconContainer>
+                <TbTarget size={24} />
+              </ServiceItemIconContainer>
 
-            <h2>Social Media</h2>
+              <h2>Social Media</h2>
+            </ServiceItemHeader>
 
             <p>
               O mercado está bastante concorrido e crescendo dia após dia, e sua

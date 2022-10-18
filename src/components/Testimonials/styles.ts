@@ -79,6 +79,7 @@ export const SliderContainer = styled(Slider, {
       objectFit: 'cover',
       width: 50,
       height: 50,
+      borderRadius: '999px',
     },
 
     h2: {
