@@ -62,8 +62,11 @@ export const SliderContainer = styled(Slider, {
     },
 
     padding: '1.25rem',
-    backgroundColor: '$white',
     borderRadius: 20,
+    minHeight: '250px',
+
+    backgroundColor: '$white',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
 
     img: {
       objectFit: 'cover',
