@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { styled } from 'styles/stiches.config'
 
 export const SolutionsContainer = styled('section', {
@@ -20,7 +21,7 @@ export const SolutionsContainer = styled('section', {
   },
 })
 
-export const SolutionsImageContainer = styled('div', {
+export const SolutionsImageContainer = styled(motion.div, {
   flex: '40%',
   width: '100%',
 
@@ -34,7 +35,7 @@ export const SolutionsImageContainer = styled('div', {
   },
 })
 
-export const SolutionsContent = styled('div', {
+export const SolutionsContent = styled(motion.div, {
   flex: '60%',
 
   display: 'flex',

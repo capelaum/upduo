@@ -1,11 +1,14 @@
+import { motion } from 'framer-motion'
 import { styled } from 'styles/stiches.config'
 
-export const PortfolioContainer = styled('section', {
+export const PortfolioContainer = styled(motion.section, {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
 
   margin: '4rem 0',
+
+  border: '1px solid $gray300',
 
   h1: {
     fontSize: '$2xl',
@@ -23,13 +26,13 @@ export const Description = styled('p', {
   maxWidth: '25rem',
 })
 
-export const ProjectsContainer = styled('div', {
+export const ProjectsContainer = styled(motion.div, {
   display: 'flex',
   flexDirection: 'column',
   gap: '2.5rem',
 })
 
-export const ProjectItem = styled('div', {
+export const ProjectItem = styled(motion.div, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
