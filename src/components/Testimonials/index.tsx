@@ -1,20 +1,16 @@
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
 import Image from 'next/future/image'
-import { useState } from 'react'
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
+import { CustomArrowProps, Settings } from 'react-slick'
+import { Testimonial } from 'types/home'
 
 import {
   Description,
-  SlideItem,
   SliderArrow,
-  SliderArrowContainer,
   SliderContainer,
   TestimonialsContainer,
 } from './styles'
 
 import lead_line from 'assets/lead_line.svg'
-import { Testimonial } from 'types/home'
 
 interface TestimonialsProps {
   id?: string
@@ -22,40 +18,35 @@ interface TestimonialsProps {
 }
 
 export function Testimonials({ id, testimonials }: TestimonialsProps) {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  // console.log('🚀 ~ currentSlide', currentSlide)
+  const sliderSettings: Settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: 'linear',
+    initialSlide: 0,
+    slidesToScroll: 1,
+    arrows: false,
 
-  const [loaded, setLoaded] = useState(false)
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    mode: 'snap',
-    drag: true,
-    loop: true,
-    slides: {
-      perView: 3,
-      spacing: 20,
-    },
-    breakpoints: {
-      '(max-width: 1200px)': {
-        slides: {
-          perView: 2,
-          spacing: 20,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
-      '(max-width: 768px)': {
-        slides: {
-          perView: 1,
-          spacing: 16,
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
-    },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
-    },
-    created() {
-      setLoaded(true)
-    },
-  })
+    ],
+  }
 
   return (
     <TestimonialsContainer id={id}>
@@ -70,9 +61,9 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
         Confira o que alguns de nossos clientes tem a dizer.
       </Description>
 
-      <SliderContainer ref={sliderRef} className="keen-slider">
+      <SliderContainer {...sliderSettings}>
         {testimonials.map((testimonial) => (
-          <SlideItem key={testimonial.id} className="keen-slider__slide">
+          <div key={testimonial.id}>
             <Image
               src={testimonial.photo.url}
               width={50}
@@ -81,27 +72,41 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
             />
             <h2>{testimonial.author}</h2>
             <p>{testimonial.content}</p>
-          </SlideItem>
+          </div>
         ))}
       </SliderContainer>
 
-      {loaded && slider.current && (
-        <SliderArrowContainer>
-          <SliderArrow
-            direction="left"
-            onClick={(e: any) => e.stopPropagation() || slider.current?.prev()}
-          >
-            <TbChevronLeft size={48} color="#fff" />
-          </SliderArrow>
+      {/* <SliderArrowContainer>
+        <SliderArrow direction="left" onClick={() => slider?.slickPrev()}>
+          <TbChevronLeft size={48} color="#fff" />
+        </SliderArrow>
 
-          <SliderArrow
-            direction="right"
-            onClick={(e: any) => e.stopPropagation() || slider.current?.next()}
-          >
-            <TbChevronRight size={48} color="#fff" />
-          </SliderArrow>
-        </SliderArrowContainer>
-      )}
+        <SliderArrow direction="right" onClick={() => slider?.slickNext()}>
+          <TbChevronRight size={48} color="#fff" />
+        </SliderArrow>
+      </SliderArrowContainer> */}
     </TestimonialsContainer>
+  )
+}
+
+interface SliderArrowProps extends CustomArrowProps {
+  direction: 'left' | 'right'
+}
+
+export const CustoArrow = ({ direction, ...props }: SliderArrowProps) => {
+  const { onClick } = props
+
+  return (
+    <SliderArrow
+      // {...props}
+      direction={direction}
+      onClick={onClick}
+    >
+      {direction === 'left' ? (
+        <TbChevronLeft size={48} color="#fff" />
+      ) : (
+        <TbChevronRight size={48} color="#fff" />
+      )}
+    </SliderArrow>
   )
 }

@@ -47,7 +47,6 @@ export const HeroCallToAction = styled('div', {
     alignItems: 'center',
 
     h2: {
-      fontSize: '$2xl',
       textAlign: 'center',
     },
 

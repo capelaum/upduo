@@ -50,19 +50,27 @@ interface ResponseDataProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { allTestimonials, allProjects: homeProjects }: ResponseDataProps =
-    await DatoCmsRequest({
-      query: GET_HOME,
-      variables: {
-        first: 3,
-      },
-    })
+  try {
+    const { allTestimonials, allProjects: homeProjects }: ResponseDataProps =
+      await DatoCmsRequest({
+        query: GET_HOME,
+        variables: {
+          first: 3,
+        },
+      })
 
-  return {
-    props: {
-      allTestimonials,
-      homeProjects,
-    },
-    revalidate: 30,
+    return {
+      props: {
+        allTestimonials,
+        homeProjects,
+      },
+      revalidate: 30,
+    }
+  } catch (error) {
+    console.log('🚀 ~ error', error)
+
+    return {
+      notFound: true,
+    }
   }
 }

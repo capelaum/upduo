@@ -35,7 +35,7 @@ export const ServicesImageContainer = styled('div', {
 
   flex: '50%',
 
-  background: 'radial-gradient(circle, #2AB793 0%, #0e2d3e 60%)',
+  background: 'radial-gradient(circle, $green500 0%, #0e2d3e 60%)',
 
   img: {
     width: '100%',
@@ -63,7 +63,7 @@ export const ServiceItem = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  gap: '1rem',
+  gap: '1.5rem',
 
   h2: {
     fontSize: '$xl',
@@ -73,6 +73,21 @@ export const ServiceItem = styled('div', {
   p: {
     fontSize: '$md',
     color: '$gray100',
+  },
+
+  // '@bp1': {
+  //   flexDirection: 'row',
+  // },
+})
+
+export const ServiceItemHeader = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: '1rem',
+
+  '@bp1': {
+    flexDirection: 'row',
   },
 })
 
@@ -88,7 +103,14 @@ export const ServiceItemIconContainer = styled('div', {
 
   transform: 'rotate(45deg)',
 
+  transition: 'all 1s ease-in-out',
+
   svg: {
     transform: 'rotate(-45deg)',
+  },
+
+  '&:hover': {
+    transform: 'rotate(405deg) scale(1.3)',
+    background: '$green200',
   },
 })

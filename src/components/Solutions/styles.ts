@@ -1,7 +1,7 @@
 import { styled } from 'styles/stiches.config'
 
 export const SolutionsContainer = styled('section', {
-  margin: '8rem 0',
+  margin: '12rem 0',
   gap: '5rem',
 
   display: 'flex',

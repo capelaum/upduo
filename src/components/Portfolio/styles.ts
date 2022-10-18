@@ -39,6 +39,8 @@ export const ProjectItem = styled('div', {
   borderRadius: '1.25rem',
   backgroundColor: '$white',
 
+  transition: 'all 0.3s ease-in-out',
+
   img: {
     width: '40%',
     objectFit: 'cover',
@@ -61,6 +63,7 @@ export const ProjectItemDetails = styled('div', {
   flexDirection: 'column',
 
   alignSelf: 'stretch',
+  alignItems: 'flex-start',
 
   h2: {
     fontSize: '$2xl',
@@ -78,7 +81,7 @@ export const ProjectItemDetails = styled('div', {
   },
 
   a: {
-    fontSize: '1.125rem',
+    fontSize: '$lg',
     fontWeight: 700,
     color: '$green500',
     textDecoration: 'none',
