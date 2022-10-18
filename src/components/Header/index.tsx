@@ -33,13 +33,13 @@ export function Header({ sectionsInView }: HeaderProps) {
         </Link>
 
         <nav>
-          <Link href="#services" scroll={false}>
+          <Link href="#services" scroll={false} passHref>
             <NavLink active={isServicesActive}>Serviços</NavLink>
           </Link>
-          <Link href="#testimonials" scroll={false}>
+          <Link href="#testimonials" scroll={false} passHref>
             <NavLink active={isTestimonialsActive}>Depoimentos</NavLink>
           </Link>
-          <Link href="#portfolio" scroll={false}>
+          <Link href="#portfolio" scroll={false} passHref>
             <NavLink active={isPortfolioActive}>Portfolio</NavLink>
           </Link>
         </nav>
