@@ -10,7 +10,7 @@ export const TestimonialsContainer = styled(motion.section, {
   marginTop: '16rem',
   paddingBottom: '10rem',
 
-  background: 'radial-gradient(ellipse, #239172 0%, #0e2d3e 70%)',
+  background: 'radial-gradient(ellipse, #239172 0%, transparent 70%)',
 
   h1: {
     fontSize: '$2xl',

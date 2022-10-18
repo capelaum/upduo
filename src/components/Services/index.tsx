@@ -1,3 +1,4 @@
+import { services } from '@constants'
 import Image from 'next/future/image'
 import { useEffect } from 'react'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
@@ -12,8 +13,6 @@ import {
   ServicesContent,
   ServicesImageContainer,
 } from './styles'
-
-import services from 'assets/services.svg'
 
 interface ServicesProps {
   id?: string

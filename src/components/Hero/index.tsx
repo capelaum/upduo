@@ -1,15 +1,13 @@
+import { hero, hero_square } from '@constants'
+import { ContactButton } from 'components/ContactButton'
 import Image from 'next/future/image'
+import { MdSend } from 'react-icons/md'
 import {
   HeroCallToAction,
   HeroContainer,
   HeroImageContainer,
   HeroSquareImageContainer,
 } from './styles'
-
-import hero from 'assets/hero.svg'
-import hero_square from 'assets/hero_square.svg'
-import { ContactButton } from 'components/ContactButton'
-import { MdSend } from 'react-icons/md'
 
 export function Hero() {
   return (

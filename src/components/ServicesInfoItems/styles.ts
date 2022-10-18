@@ -6,6 +6,8 @@ export const ServicesInfoItemsContainer = styled('section', {
   alignItems: 'center',
   justifyContent: 'start',
 
+  marginTop: '8rem',
+
   gap: '2rem',
 
   '@bp1': {

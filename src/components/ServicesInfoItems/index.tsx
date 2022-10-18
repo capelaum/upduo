@@ -1,11 +1,10 @@
+import { solutions_square } from '@constants'
+import Image from 'next/future/image'
 import {
   ServiceInfoItem,
   ServicesInfoItemsContainer,
   ServicesSquareImageContainer,
 } from './styles'
-
-import solutions_square from 'assets/solutions_square.svg'
-import Image from 'next/future/image'
 
 export function ServicesInfoItems() {
   return (

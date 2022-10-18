@@ -7,8 +7,6 @@ export const HeroContainer = styled(motion.section, {
   justifyContent: 'space-between',
   gap: '8rem',
 
-  marginBottom: '4.5rem',
-
   '@media (max-width: 1200px)': {
     gap: '4.5rem',
   },

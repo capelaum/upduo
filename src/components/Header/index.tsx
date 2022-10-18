@@ -1,9 +1,8 @@
+import { upduo_logo_white } from '@constants'
 import { HeaderDropdownMenu } from 'components/HeaderDropdownMenu'
 import Image from 'next/future/image'
 import Link from 'next/link'
 import { HeaderContainer, HeaderContent, NavLink } from './styles'
-
-import upduo_logo_white from 'assets/upduo_logo_white.svg'
 
 interface HeaderProps {
   sectionsInView: {

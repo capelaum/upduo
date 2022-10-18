@@ -1,4 +1,4 @@
-import solutions from 'assets/solutions.svg'
+import { solutions } from '@constants'
 import { ContactButton } from 'components/ContactButton'
 import Image from 'next/future/image'
 import { MdOutlineMail } from 'react-icons/md'

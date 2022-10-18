@@ -1,5 +1,7 @@
+import { footer_square, upduo_logo_white } from '@constants'
 import Image from 'next/future/image'
 import { BsBehance, BsInstagram, BsWhatsapp } from 'react-icons/bs'
+import { MdOutlineMail } from 'react-icons/md'
 import {
   FooterContainer,
   SocialContainer,
@@ -9,10 +11,6 @@ import {
   SquareRight,
   UpduoContainer,
 } from './styles'
-
-import footer_square from 'assets/footer_square.svg'
-import upduo_logo_white from 'assets/upduo_logo_white.svg'
-import { MdOutlineMail } from 'react-icons/md'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()

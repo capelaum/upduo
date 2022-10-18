@@ -37,7 +37,7 @@ export const ServicesImageContainer = styled(motion.div, {
 
   flex: '50%',
 
-  background: 'radial-gradient(circle, $green500 0%, #0e2d3e 60%)',
+  background: 'radial-gradient(circle, $green500 0%, transparent 60%)',
 
   img: {
     width: '100%',
@@ -76,10 +76,6 @@ export const ServiceItem = styled('div', {
     fontSize: '$md',
     color: '$gray100',
   },
-
-  // '@bp1': {
-  //   flexDirection: 'row',
-  // },
 })
 
 export const ServiceItemHeader = styled('div', {
