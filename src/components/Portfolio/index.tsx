@@ -1,5 +1,9 @@
+import lead_line from 'assets/lead_line.svg'
+import { useAnimation } from 'framer-motion'
 import Image from 'next/future/image'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { Project } from 'types/home'
 import {
   Description,
@@ -9,16 +13,46 @@ import {
   ProjectsContainer,
 } from './styles'
 
-import lead_line from 'assets/lead_line.svg'
-
 interface PortfolioProps {
   id?: string
   homeProjects: Project[]
+  setPortfolioInView: (inView: boolean) => void
 }
 
-export function Portfolio({ id, homeProjects }: PortfolioProps) {
+export function Portfolio({
+  id,
+  homeProjects,
+  setPortfolioInView,
+}: PortfolioProps) {
+  const { ref, inView } = useInView()
+
+  const animation = useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      setPortfolioInView(true)
+      document.title = 'UpDuo Comunicação - Portfólio'
+      animation.start({
+        x: 0,
+        transition: {
+          type: 'spring',
+          duration: 1,
+          bounce: 0.3,
+          delay: 0.5,
+        },
+      })
+    }
+
+    if (!inView) {
+      setPortfolioInView(false)
+      animation.start({
+        x: '-100vw',
+      })
+    }
+  }, [inView, animation, setPortfolioInView])
+
   return (
-    <PortfolioContainer id={id}>
+    <PortfolioContainer id={id} ref={ref}>
       <h1>Portfolio</h1>
 
       <Image
@@ -30,8 +64,8 @@ export function Portfolio({ id, homeProjects }: PortfolioProps) {
         Confira alguns de nossos trabalhos realizados e surpreenda-se!
       </Description>
 
-      <ProjectsContainer>
-        {homeProjects.map((project) => (
+      <ProjectsContainer animate={animation}>
+        {homeProjects.map((project, index) => (
           <ProjectItem key={project.id}>
             <Image
               src={project.cover.url}

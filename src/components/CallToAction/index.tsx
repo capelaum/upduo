@@ -4,7 +4,11 @@ import { CallToActionContainer, CallToActionContent } from './styles'
 
 export function CallToAction() {
   return (
-    <CallToActionContainer>
+    <CallToActionContainer
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
+    >
       <CallToActionContent>
         <h1>Vamos trabalhar juntos?</h1>
 

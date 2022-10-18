@@ -10,12 +10,20 @@ import Image from 'next/future/image'
 export function ServicesInfoItems() {
   return (
     <ServicesInfoItemsContainer>
-      <ServiceInfoItem>
+      <ServiceInfoItem
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
         <h1>Design</h1>
         <p>O design está em tudo à nossa volta.</p>
       </ServiceInfoItem>
 
-      <ServiceInfoItem>
+      <ServiceInfoItem
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
         <h1>Marketing Digital</h1>
         <p>Se sua empresa não é vista, não é lembrada.</p>
       </ServiceInfoItem>

@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import { styled } from 'styles/stiches.config'
 
-export const HeroContainer = styled('section', {
+export const HeroContainer = styled(motion.section, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -25,7 +26,7 @@ export const HeroSquareImageContainer = styled('div', {
   opacity: 0.3,
 })
 
-export const HeroCallToAction = styled('div', {
+export const HeroCallToAction = styled(motion.div, {
   flex: '50%',
 
   display: 'flex',
@@ -58,7 +59,7 @@ export const HeroCallToAction = styled('div', {
   },
 })
 
-export const HeroImageContainer = styled('div', {
+export const HeroImageContainer = styled(motion.div, {
   flex: '50%',
 
   img: {

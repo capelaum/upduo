@@ -11,11 +11,19 @@ import {
 export function Solutions() {
   return (
     <SolutionsContainer>
-      <SolutionsImageContainer>
+      <SolutionsImageContainer
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
         <Image src={solutions} alt="Gráficos coloridos." />
       </SolutionsImageContainer>
 
-      <SolutionsContent>
+      <SolutionsContent
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
         <h1>Soluções criativas e estratégicas para escalar seu negócio! </h1>
 
         <p>

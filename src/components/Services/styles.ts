@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { styled } from 'styles/stiches.config'
 
 export const ServicesContainer = styled('section', {
@@ -5,7 +6,7 @@ export const ServicesContainer = styled('section', {
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: '4rem',
-  marginBottom: '8rem',
+  marginTop: '12rem',
 
   '@media (max-width: 1200px)': {
     gap: '2rem',
@@ -13,10 +14,11 @@ export const ServicesContainer = styled('section', {
 
   '@bp1': {
     flexDirection: 'column-reverse',
+    marginTop: '8rem',
   },
 })
 
-export const ServicesContent = styled('div', {
+export const ServicesContent = styled(motion.div, {
   flex: '50%',
 
   display: 'flex',
@@ -28,7 +30,7 @@ export const ServicesContent = styled('div', {
   },
 })
 
-export const ServicesImageContainer = styled('div', {
+export const ServicesImageContainer = styled(motion.div, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

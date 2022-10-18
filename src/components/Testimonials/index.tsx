@@ -1,5 +1,6 @@
 import Image from 'next/future/image'
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
+import { useInView } from 'react-intersection-observer'
 import { CustomArrowProps, Settings } from 'react-slick'
 import { Testimonial } from 'types/home'
 
@@ -11,13 +12,31 @@ import {
 } from './styles'
 
 import lead_line from 'assets/lead_line.svg'
+import { useEffect } from 'react'
 
 interface TestimonialsProps {
   id?: string
   testimonials: Testimonial[]
+  setTestimonialsInView: (inView: boolean) => void
 }
 
-export function Testimonials({ id, testimonials }: TestimonialsProps) {
+export function Testimonials({
+  id,
+  testimonials,
+  setTestimonialsInView,
+}: TestimonialsProps) {
+  const { ref, inView } = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      setTestimonialsInView(true)
+    }
+
+    if (!inView) {
+      setTestimonialsInView(false)
+    }
+  }, [inView, setTestimonialsInView])
+
   const sliderSettings: Settings = {
     dots: true,
     infinite: true,
@@ -49,7 +68,13 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
   }
 
   return (
-    <TestimonialsContainer id={id}>
+    <TestimonialsContainer
+      id={id}
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+    >
       <h1>Depoimentos</h1>
 
       <Image

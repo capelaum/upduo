@@ -18,7 +18,11 @@ export function Hero() {
         <Image src={hero_square} alt="Losango azul com baixa opacidade" />
       </HeroSquareImageContainer>
 
-      <HeroCallToAction>
+      <HeroCallToAction
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
         <h2>Foco no Crescimento!</h2>
 
         <p>Design e Estratégias de marketing para escalar seu negócio!</p>
@@ -37,7 +41,11 @@ export function Hero() {
         </ContactButton>
       </HeroCallToAction>
 
-      <HeroImageContainer>
+      <HeroImageContainer
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
         <Image
           src={hero}
           alt="Mulher olhando para alguns gráficos ao redor em azul e verde."

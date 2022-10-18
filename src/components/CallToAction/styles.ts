@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import { styled } from 'styles/stiches.config'
 
-export const CallToActionContainer = styled('section', {
+export const CallToActionContainer = styled(motion.section, {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',

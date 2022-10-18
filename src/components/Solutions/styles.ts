@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion'
 import { styled } from 'styles/stiches.config'
 
 export const SolutionsContainer = styled('section', {
-  margin: '12rem 0',
+  marginTop: '12rem',
   gap: '5rem',
 
   display: 'flex',
@@ -14,13 +15,13 @@ export const SolutionsContainer = styled('section', {
 
   '@bp1': {
     gap: '5rem',
-    marginBottom: '4rem',
+    marginTop: '8rem',
 
     flexDirection: 'column',
   },
 })
 
-export const SolutionsImageContainer = styled('div', {
+export const SolutionsImageContainer = styled(motion.div, {
   flex: '40%',
   width: '100%',
 
@@ -34,7 +35,7 @@ export const SolutionsImageContainer = styled('div', {
   },
 })
 
-export const SolutionsContent = styled('div', {
+export const SolutionsContent = styled(motion.div, {
   flex: '60%',
 
   display: 'flex',
