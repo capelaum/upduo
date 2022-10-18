@@ -21,7 +21,7 @@ export function Testimonials({ id, testimonials }: TestimonialsProps) {
   const sliderSettings: Settings = {
     dots: true,
     infinite: true,
-    speed: 700,
+    speed: 500,
     slidesToShow: 3,
     autoplay: true,
     autoplaySpeed: 3000,
