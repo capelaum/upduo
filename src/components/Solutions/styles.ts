@@ -22,10 +22,15 @@ export const SolutionsContainer = styled('section', {
 
 export const SolutionsImageContainer = styled('div', {
   flex: '40%',
+  width: '100%',
 
   img: {
     width: '100%',
     height: '100%',
+  },
+
+  '@bp1': {
+    flex: '90%',
   },
 })
 
