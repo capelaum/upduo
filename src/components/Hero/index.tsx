@@ -1,11 +1,11 @@
-import { hero, hero_square } from '@constants'
+import { hero_square } from '@constants'
 import { ContactButton } from 'components/ContactButton'
 import Image from 'next/future/image'
 import { MdSend } from 'react-icons/md'
+import { HeroVectors } from './HeroVectors'
 import {
   HeroCallToAction,
   HeroContainer,
-  HeroImageContainer,
   HeroSquareImageContainer,
 } from './styles'
 
@@ -39,16 +39,25 @@ export function Hero() {
         </ContactButton>
       </HeroCallToAction>
 
-      <HeroImageContainer
+      <HeroVectors />
+
+      {/* <HeroImageContainer
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
+        whileInView={{ y: [0, 20], opacity: [1, 1] }}
+        transition={{
+          delay: 0.3,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          duration: 2,
+          type: 'spring',
+          stiffness: 100,
+        }}
       >
         <Image
           src={hero}
           alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
         />
-      </HeroImageContainer>
+      </HeroImageContainer> */}
     </HeroContainer>
   )
 }
