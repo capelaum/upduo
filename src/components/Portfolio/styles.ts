@@ -5,7 +5,6 @@ export const PortfolioContainer = styled(motion.section, {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  overflow: 'hidden',
 
   marginTop: '15rem',
 
@@ -13,6 +12,10 @@ export const PortfolioContainer = styled(motion.section, {
     fontSize: '$2xl',
     fontWeight: 500,
     marginBottom: '2rem',
+  },
+
+  '@media (max-width: 1300px)': {
+    overflow: 'hidden',
   },
 
   '@bp1': {

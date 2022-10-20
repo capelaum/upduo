@@ -1,4 +1,4 @@
-import { styled } from 'styles/stiches.config'
+import { keyframes, styled } from 'styles/stiches.config'
 
 export const FooterContainer = styled('footer', {
   display: 'flex',
@@ -103,16 +103,48 @@ export const SocialLinks = styled('div', {
   gap: '1.25rem',
 })
 
+const socialLinkAnimation = keyframes({
+  '0%': { width: 0, height: 0 },
+  '50%': { width: '50%', height: '50%' },
+  '100%': { width: '100%', height: '100%' },
+})
+
 export const SocialLink = styled('a', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  position: 'relative',
+  borderRadius: '10rem',
 
-  transition: 'all 0.2s ease-in-out',
+  overflow: 'hidden',
+
+  width: '48px',
+  height: '48px',
+
+  transition: 'all 0.2s',
+  color: '$white',
+
+  '&::before': {
+    content: '',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    background: 'linear-gradient(-45deg, $blue700 0%, $green200 100%)',
+    zIndex: -1,
+    borderRadius: '50%',
+    transform: 'translate(100%, 100%)',
+    transition: 'all 0.2s',
+  },
 
   '&:hover': {
-    svg: {
-      stroke: '$green200',
+    transform: 'scale(1.25)',
+
+    '&::before': {
+      transform: ' translate(0)',
+      animation: 'socialLinkAnimation 0.2s linear',
+      animationName: socialLinkAnimation,
     },
   },
 })

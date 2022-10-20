@@ -42,7 +42,7 @@ export function Footer() {
             rel="noopener noreferrer nofollow"
             title="Enviar e-mail para UpDuo"
           >
-            <MdOutlineMail size={32} />
+            <MdOutlineMail size={32} color="#fff" />
           </SocialLink>
 
           <SocialLink
@@ -51,7 +51,7 @@ export function Footer() {
             rel="noopener noreferrer nofollow"
             title="WhatsApp da UpDuo"
           >
-            <BsWhatsapp size={26} />
+            <BsWhatsapp size={26} color="#fff" />
           </SocialLink>
 
           <SocialLink
@@ -60,7 +60,7 @@ export function Footer() {
             rel="noopener noreferrer nofollow"
             title="Ver Instagram da UpDuo"
           >
-            <BsInstagram size={28} />
+            <BsInstagram size={28} color="#fff" />
           </SocialLink>
 
           <SocialLink
@@ -69,7 +69,7 @@ export function Footer() {
             rel="noopener noreferrer nofollow"
             title="Ver Behance da UpDuo"
           >
-            <BsBehance size={32} />
+            <BsBehance size={32} color="#fff" />
           </SocialLink>
         </SocialLinks>
 
