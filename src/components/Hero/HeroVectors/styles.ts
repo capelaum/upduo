@@ -3,9 +3,9 @@ import { styled } from 'styles/stiches.config'
 
 export const HeroVectorsContainer = styled(motion.div, {
   flex: '50%',
-  paddingRight: '7%',
+  paddingRight: '8%',
 
-  // border: '1px solid blue',
+  border: '1px solid blue',
 
   display: 'flex',
   alignItems: 'center',
@@ -23,12 +23,11 @@ export const VectorsContainer = styled(motion.div, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  // padding: '0 4rem',
 
   position: 'relative',
   maxWidth: '400px',
 
-  // border: '1px solid red',
+  border: '1px solid red',
 
   img: {
     width: '100%',
@@ -57,7 +56,7 @@ export const VectorsContainer = styled(motion.div, {
     width: '26%',
   },
   '.hero-thumbs-up': {
-    bottom: '-5%',
+    bottom: '-10%',
     left: '-12%',
     width: '18%',
   },
