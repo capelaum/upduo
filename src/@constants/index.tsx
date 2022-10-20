@@ -15,6 +15,13 @@ import hero_likes from 'assets/HeroVectors/likes.svg'
 import hero_main from 'assets/HeroVectors/main.svg'
 import hero_thumbs_up from 'assets/HeroVectors/thumbs_up.svg'
 
+import service_photo_icon from 'assets/ServiceVectors/photo_icon.svg'
+import service_pin_icon from 'assets/ServiceVectors/pin_icon.svg'
+import service_play_icon from 'assets/ServiceVectors/play_icon.svg'
+import service_radio_icon from 'assets/ServiceVectors/radio_icon.svg'
+import services_main from 'assets/ServiceVectors/services_main.svg'
+import service_star_icon from 'assets/ServiceVectors/star_icon.svg'
+
 export {
   upduo_logo_white,
   solutions_square,
@@ -31,4 +38,10 @@ export {
   hero_likes,
   hero_main,
   hero_thumbs_up,
+  service_photo_icon,
+  service_pin_icon,
+  service_play_icon,
+  service_star_icon,
+  service_radio_icon,
+  services_main,
 }

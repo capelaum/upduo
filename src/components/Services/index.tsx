@@ -1,9 +1,8 @@
-import { services } from '@constants'
-import Image from 'next/future/image'
 import { useEffect } from 'react'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
 import { TbTarget } from 'react-icons/tb'
 import { useInView } from 'react-intersection-observer'
+import { ServicesVectors } from './ServicesVectors'
 import {
   ServiceItem,
   ServiceItemHeader,
@@ -11,7 +10,6 @@ import {
   ServiceItemsContainer,
   ServicesContainer,
   ServicesContent,
-  ServicesImageContainer,
 } from './styles'
 
 interface ServicesProps {
@@ -84,7 +82,9 @@ export function Services({ id, setServicesInView }: ServicesProps) {
         </ServiceItemsContainer>
       </ServicesContent>
 
-      <ServicesImageContainer
+      <ServicesVectors />
+
+      {/* <ServicesImageContainer
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
@@ -93,7 +93,7 @@ export function Services({ id, setServicesInView }: ServicesProps) {
           src={services}
           alt="Balões com caixas coloridas de mensagem e itens de mídias sociais."
         />
-      </ServicesImageContainer>
+      </ServicesImageContainer> */}
     </ServicesContainer>
   )
 }

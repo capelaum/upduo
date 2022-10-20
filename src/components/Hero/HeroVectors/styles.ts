@@ -54,7 +54,19 @@ export const VectorsContainer = styled(motion.div, {
   '.hero-thumbs-up': {
     bottom: '-10%',
     left: '-12%',
-    width: '18%',
+    width: '20%',
+
+    span: {
+      position: 'absolute',
+      top: '54%',
+      left: '70%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 3,
+      color: '$white',
+      fontSize: '$xs',
+
+      // border: '1px solid red',
+    },
   },
 
   '.hero-diagram-right-1': {
@@ -71,9 +83,38 @@ export const VectorsContainer = styled(motion.div, {
   '.hero-likes': {
     top: '48%',
     right: '-10%',
+    width: '24%',
+
+    span: {
+      position: 'absolute',
+      top: '40%',
+      left: '60%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 3,
+      color: '$blue700',
+
+      // border: '1px solid red',
+    },
   },
 
   '@bp1': {
     width: '100%',
+  },
+
+  '@bp2': {
+    '.hero-likes': {
+      span: {
+        top: '38%',
+        left: '65%',
+        fontSize: '0.8125rem',
+      },
+    },
+    '.hero-thumbs-up': {
+      span: {
+        // top: '38%',
+        left: '70%',
+        fontSize: '0.6rem',
+      },
+    },
   },
 })

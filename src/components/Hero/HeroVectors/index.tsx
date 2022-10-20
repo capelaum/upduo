@@ -10,9 +10,29 @@ import {
 } from '@constants'
 import { motion } from 'framer-motion'
 import Image from 'next/future/image'
+import { useEffect, useState } from 'react'
 import { HeroVectorsContainer, VectorsContainer } from './styles'
 
 export function HeroVectors() {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const setTimeoutId = setTimeout(() => {
+      if (count <= 9998) {
+        setCount((count) => count + 1)
+      }
+
+      // increase delay if count is greater than 9999
+      if (count === 9999) {
+        setInterval(() => {
+          setCount(0)
+        }, 3000)
+      }
+    }, 10)
+
+    return () => clearTimeout(setTimeoutId)
+  }, [count])
+
   return (
     <HeroVectorsContainer
       initial={{ opacity: 0, y: 50 }}
@@ -48,7 +68,7 @@ export function HeroVectors() {
         >
           <Image
             src={hero_diagram_left_1}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
+            alt="Gráfico de barras brancas com fundo verde claro"
           />
         </motion.div>
 
@@ -63,7 +83,7 @@ export function HeroVectors() {
         >
           <Image
             src={hero_diagram_left_2}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
+            alt="Gráfico circular com fundo verde claro"
           />
         </motion.div>
 
@@ -76,10 +96,7 @@ export function HeroVectors() {
             duration: 1,
           }}
         >
-          <Image
-            src={hero_diagram_left_3}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
-          />
+          <Image src={hero_diagram_left_3} alt="Retângulo branco" />
         </motion.div>
 
         <motion.div
@@ -91,10 +108,8 @@ export function HeroVectors() {
             duration: 3,
           }}
         >
-          <Image
-            src={hero_thumbs_up}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
-          />
+          <Image src={hero_thumbs_up} alt="" />
+          <span>{count}</span>
         </motion.div>
 
         <motion.div
@@ -106,10 +121,7 @@ export function HeroVectors() {
             duration: 3,
           }}
         >
-          <Image
-            src={hero_diagram_right_1}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
-          />
+          <Image src={hero_diagram_right_1} alt="" />
         </motion.div>
 
         <motion.div
@@ -123,7 +135,7 @@ export function HeroVectors() {
         >
           <Image
             src={hero_diagram_right_2}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
+            alt="Gráfico de linha branco com fundo verde claro"
           />
         </motion.div>
 
@@ -136,10 +148,8 @@ export function HeroVectors() {
             duration: 4,
           }}
         >
-          <Image
-            src={hero_likes}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
-          />
+          <Image src={hero_likes} alt="" />
+          <span>{count}</span>
         </motion.div>
       </VectorsContainer>
     </HeroVectorsContainer>
