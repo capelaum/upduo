@@ -5,8 +5,6 @@ export const HeroVectorsContainer = styled(motion.div, {
   flex: '50%',
   paddingRight: '8%',
 
-  border: '1px solid blue',
-
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -27,13 +25,11 @@ export const VectorsContainer = styled(motion.div, {
   position: 'relative',
   maxWidth: '400px',
 
-  border: '1px solid red',
+  // border: '1px solid red',
 
   img: {
     width: '100%',
     height: '100%',
-    // maxWidth: '380px',
-    // border: '1px solid red',
   },
 
   '.hero-vector': {
