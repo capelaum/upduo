@@ -39,13 +39,11 @@ export function HeroVectors() {
 
         <motion.div
           className="hero-vector hero-diagram-left-1"
-          animate={{ y: [0, -16], opacity: [1, 1] }}
+          animate={{ y: [0, -12], opacity: [1, 1] }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
             duration: 2,
-            type: 'spring',
-            stiffness: 100,
           }}
         >
           <Image
@@ -60,9 +58,7 @@ export function HeroVectors() {
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 2,
-            type: 'spring',
-            stiffness: 100,
+            duration: 1.5,
           }}
         >
           <Image
@@ -77,9 +73,7 @@ export function HeroVectors() {
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 2,
-            type: 'spring',
-            stiffness: 100,
+            duration: 1,
           }}
         >
           <Image
@@ -90,13 +84,11 @@ export function HeroVectors() {
 
         <motion.div
           className="hero-vector hero-thumbs-up"
-          animate={{ y: [-8, 0], opacity: [1, 1] }}
+          animate={{ y: [-20, 0], opacity: [1, 1] }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 1.5,
-            type: 'spring',
-            stiffness: 100,
+            duration: 3,
           }}
         >
           <Image
@@ -107,13 +99,11 @@ export function HeroVectors() {
 
         <motion.div
           className="hero-vector hero-diagram-right-1"
-          animate={{ y: [-16, 0], opacity: [1, 1] }}
+          animate={{ y: [-6, 0], opacity: [1, 1] }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 2,
-            type: 'spring',
-            stiffness: 100,
+            duration: 3,
           }}
         >
           <Image
@@ -124,13 +114,11 @@ export function HeroVectors() {
 
         <motion.div
           className="hero-vector hero-diagram-right-2"
-          animate={{ y: [0, -14], opacity: [1, 1] }}
+          animate={{ y: [0, -7], opacity: [1, 1] }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 2,
-            type: 'spring',
-            stiffness: 100,
+            duration: 1.5,
           }}
         >
           <Image
@@ -141,13 +129,11 @@ export function HeroVectors() {
 
         <motion.div
           className="hero-vector hero-likes"
-          animate={{ y: [-8, 0], opacity: [1, 1] }}
+          animate={{ y: [-20, 0], opacity: [1, 1] }}
           transition={{
             repeat: Infinity,
             repeatType: 'reverse',
-            duration: 1,
-            type: 'spring',
-            stiffness: 100,
+            duration: 4,
           }}
         >
           <Image
