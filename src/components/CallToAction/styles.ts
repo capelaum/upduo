@@ -14,15 +14,15 @@ export const CallToActionContainer = styled(motion.section, {
 
   backgroundColor: '$green500',
 
-  button: {
+  'button, a': {
     display: 'flex',
-    minWidth: 243,
+    minWidth: 245,
   },
 
   '@bp1': {
     flexDirection: 'column',
 
-    button: {
+    'button, a': {
       alignSelf: 'stretch',
     },
   },
@@ -30,7 +30,7 @@ export const CallToActionContainer = styled(motion.section, {
   '@bp3': {
     padding: '1.5rem 2rem',
 
-    button: {
+    'button, a': {
       padding: '1rem 0.5rem',
       minWidth: '100%',
     },

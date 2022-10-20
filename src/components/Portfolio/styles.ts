@@ -5,6 +5,7 @@ export const PortfolioContainer = styled(motion.section, {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  overflow: 'hidden',
 
   marginTop: '15rem',
 
