@@ -40,22 +40,10 @@ export function HeroVectors() {
       transition={{ delay: 0.3 }}
     >
       <VectorsContainer>
-        <motion.div
-          className="hero-vector-main"
-          // animate={{ y: [0, -8], opacity: [1, 1] }}
-          // transition={{
-          //   repeat: Infinity,
-          //   repeatType: 'reverse',
-          //   duration: 2,
-          //   type: 'spring',
-          //   stiffness: 100,
-          // }}
-        >
-          <Image
-            src={hero_main}
-            alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
-          />
-        </motion.div>
+        <Image
+          src={hero_main}
+          alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
+        />
 
         <motion.div
           className="hero-vector hero-diagram-left-1"
