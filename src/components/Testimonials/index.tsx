@@ -73,6 +73,7 @@ export function Testimonials({
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ delay: 0.5, duration: 0.5 }}
     >
       <h1>Depoimentos</h1>

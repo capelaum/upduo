@@ -19,7 +19,8 @@ export function Hero() {
       <HeroCallToAction
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        viewport={{ once: true }}
       >
         <h2>Foco no Crescimento!</h2>
 
@@ -40,24 +41,6 @@ export function Hero() {
       </HeroCallToAction>
 
       <HeroVectors />
-
-      {/* <HeroImageContainer
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ y: [0, 20], opacity: [1, 1] }}
-        transition={{
-          delay: 0.3,
-          repeat: Infinity,
-          repeatType: 'reverse',
-          duration: 2,
-          type: 'spring',
-          stiffness: 100,
-        }}
-      >
-        <Image
-          src={hero}
-          alt="Mulher olhando para alguns gráficos ao redor em azul e verde."
-        />
-      </HeroImageContainer> */}
     </HeroContainer>
   )
 }

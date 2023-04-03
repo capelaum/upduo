@@ -12,7 +12,8 @@ export function ServicesInfoItems() {
       <ServiceInfoItem
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        viewport={{ once: true }}
       >
         <h1>Design</h1>
         <p>O design está em tudo à nossa volta.</p>
@@ -21,7 +22,8 @@ export function ServicesInfoItems() {
       <ServiceInfoItem
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        viewport={{ once: true }}
       >
         <h1>Marketing Digital</h1>
         <p>Se sua empresa não é vista, não é lembrada.</p>

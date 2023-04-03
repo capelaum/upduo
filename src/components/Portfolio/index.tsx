@@ -1,5 +1,4 @@
 import lead_line from 'assets/lead_line.svg'
-import { useAnimation } from 'framer-motion'
 import Image from 'next/future/image'
 import Link from 'next/link'
 import { useEffect } from 'react'
@@ -26,30 +25,16 @@ export function Portfolio({
 }: PortfolioProps) {
   const { ref, inView } = useInView()
 
-  const animation = useAnimation()
-
   useEffect(() => {
     if (inView) {
       setPortfolioInView(true)
       document.title = 'UpDuo Comunicação - Portfólio'
-      animation.start({
-        x: 0,
-        transition: {
-          type: 'spring',
-          duration: 1,
-          bounce: 0.3,
-          delay: 0.5,
-        },
-      })
     }
 
     if (!inView) {
       setPortfolioInView(false)
-      animation.start({
-        x: '-100vw',
-      })
     }
-  }, [inView, animation, setPortfolioInView])
+  }, [inView, setPortfolioInView])
 
   return (
     <PortfolioContainer id={id} ref={ref}>
@@ -64,9 +49,20 @@ export function Portfolio({
         Confira alguns de nossos trabalhos realizados e surpreenda-se!
       </Description>
 
-      <ProjectsContainer animate={animation}>
+      <ProjectsContainer>
         {homeProjects.map((project, index) => (
-          <ProjectItem key={project.id}>
+          <ProjectItem
+            key={project.id}
+            initial={{ opacity: 0, x: index % 2 === 0 ? '100%' : '-100%' }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              type: 'spring',
+              delay: 0.3,
+              duration: 1.2,
+              bounce: 0.4,
+            }}
+            viewport={{ once: true }}
+          >
             <Image
               src={project.cover.url}
               alt={project.cover.alt}

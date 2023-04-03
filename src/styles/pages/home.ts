@@ -6,6 +6,7 @@ export const HomeContainer = styled('div', {
   alignItems: 'center',
 
   position: 'relative',
+  overflow: 'hidden',
 })
 
 export const HomeContent = styled('main', {

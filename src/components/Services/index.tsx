@@ -35,7 +35,8 @@ export function Services({ id, setServicesInView }: ServicesProps) {
       <ServicesContent
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        viewport={{ once: true }}
       >
         <h1>
           Encontre de forma criativa soluções comunicacionais, estratégicas e
@@ -83,17 +84,6 @@ export function Services({ id, setServicesInView }: ServicesProps) {
       </ServicesContent>
 
       <ServicesVectors />
-
-      {/* <ServicesImageContainer
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        <Image
-          src={services}
-          alt="Balões com caixas coloridas de mensagem e itens de mídias sociais."
-        />
-      </ServicesImageContainer> */}
     </ServicesContainer>
   )
 }

@@ -49,7 +49,7 @@ export const ProjectItem = styled(motion.div, {
   borderRadius: '1.25rem',
   backgroundColor: '$white',
 
-  transition: 'all 0.3s ease-in-out',
+  // transition: 'all 0.3s ease-in-out',
 
   img: {
     width: '40%',

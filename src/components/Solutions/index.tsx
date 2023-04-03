@@ -14,7 +14,8 @@ export function Solutions() {
       <SolutionsImageContainer
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        viewport={{ once: true }}
       >
         <Image src={solutions} alt="Gráficos coloridos." />
       </SolutionsImageContainer>
@@ -22,7 +23,8 @@ export function Solutions() {
       <SolutionsContent
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        viewport={{ once: true }}
       >
         <h1>Soluções criativas e estratégicas para escalar seu negócio! </h1>
 
