@@ -19,7 +19,7 @@ import service_photo_icon from 'assets/ServiceVectors/photo_icon.svg'
 import service_pin_icon from 'assets/ServiceVectors/pin_icon.svg'
 import service_play_icon from 'assets/ServiceVectors/play_icon.svg'
 import service_radio_icon from 'assets/ServiceVectors/radio_icon.svg'
-import services_main from 'assets/ServiceVectors/services_main.svg'
+import services_main from 'assets/ServiceVectors/services_main.png'
 import service_star_icon from 'assets/ServiceVectors/star_icon.svg'
 
 export {
