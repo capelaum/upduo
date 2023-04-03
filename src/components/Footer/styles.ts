@@ -131,7 +131,7 @@ export const SocialLink = styled('a', {
     left: 0,
     width: '100%',
     height: '100%',
-    background: 'linear-gradient(-45deg, $blue700 0%, $green200 100%)',
+    background: '$green200',
     zIndex: -1,
     borderRadius: '50%',
     transform: 'translate(100%, 100%)',
