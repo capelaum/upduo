@@ -29,7 +29,7 @@ export const Description = styled('p', {
 
   fontSize: '1.5rem',
   textAlign: 'center',
-  fontWeight: 500,
+  fontWeight: 300,
   maxWidth: '25rem',
 })
 

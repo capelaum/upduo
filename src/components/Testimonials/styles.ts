@@ -28,7 +28,7 @@ export const Description = styled('p', {
   marginBottom: '5rem',
   fontSize: '$xl',
   textAlign: 'center',
-  fontWeight: 500,
+  fontWeight: 300,
   maxWidth: '25rem',
 })
 

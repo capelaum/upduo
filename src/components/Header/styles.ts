@@ -12,9 +12,9 @@ export const HeaderContainer = styled('header', {
 
   backgroundColor: 'hsl(0 0% 0% / 0.5)',
 
-  '@supports (backdrop-filter: blur(0.25rem))': {
-    backgroundColor: 'hsl(220 63% 19% / 0.8)',
-    backdropFilter: 'blur(0.25rem)',
+  '@supports (backdrop-filter: blur(0.5rem))': {
+    backgroundColor: 'hsl(220 63% 20% / 0.9)',
+    backdropFilter: 'blur(0.5rem)',
   },
 })
 

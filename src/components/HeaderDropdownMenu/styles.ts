@@ -115,6 +115,6 @@ export const StyledContent = styled(DropdownMenuPrimitive.Content, {
 })
 
 export const StyledArrow = styled(DropdownMenuPrimitive.Arrow, {
-  fill: '$green200',
+  fill: '$green100',
   marginRight: 16,
 })

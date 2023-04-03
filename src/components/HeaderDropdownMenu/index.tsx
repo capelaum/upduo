@@ -36,7 +36,7 @@ export const HeaderDropdownMenu = () => {
       <DropdownMenuPrimitive.Root modal={false} open={open}>
         <DropdownMenuPrimitive.Trigger asChild onClick={toggleDropdown}>
           <IconButton aria-label="Menu de Navegação" title="Abrir menu">
-            <MdMenu size={36} />
+            <MdMenu size={48} />
           </IconButton>
         </DropdownMenuPrimitive.Trigger>
 
